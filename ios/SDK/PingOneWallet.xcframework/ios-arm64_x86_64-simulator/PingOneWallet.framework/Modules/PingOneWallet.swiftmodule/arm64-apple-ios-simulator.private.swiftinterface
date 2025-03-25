@@ -1,0 +1,450 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name PingOneWallet
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AnyCoder
+import CommunicationManager
+import CryptoTools
+import DIDSDK
+import Foundation
+import JoseTools
+@_exported import PingOneWallet
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct WalletCredentialEvent : PingOneWallet.WalletEvent {
+  public static var TYPE: PingOneWallet.WalletEventType
+  public var applicationInstanceId: Swift.String
+  public var sender: Swift.String
+  public var challenge: DIDSDK.Challenge?
+  public func getType() -> PingOneWallet.WalletEventType
+  public func getCredentialEvent() -> PingOneWallet.CredentialEventType
+  public func getReferenceCredentialId() -> Swift.String
+  public func getAction() -> PingOneWallet.CredentialAction
+}
+@_hasMissingDesignatedInitializers public class PresentationMatcherResult {
+  public func getResult() -> [PingOneWallet.CredentialMatcherResult]
+  @objc deinit
+}
+public class PollingHelper {
+  public static let DEFAULT_POLLING_INTERVAL_SEC: Swift.Double
+  public init(withInterval pollingInterval: Foundation.TimeInterval, action: @escaping (PingOneWallet.PollingHelper) -> Swift.Void)
+  public func startPolling()
+  public func stopPolling()
+  @objc deinit
+}
+extension DIDSDK.ApplicationInstance {
+  public func getPushToken() -> Foundation.Data?
+}
+extension PingOneWallet.PingOneWalletClient {
+  public class Builder {
+    public init(forRegion walletRegions: PingOneWallet.PingOneRegion..., allowOtherRegions: Swift.Bool = true)
+    @discardableResult
+    public func setApplicationInstance(_ applicationInstance: DIDSDK.ApplicationInstance, forRegion region: PingOneWallet.PingOneRegion) -> PingOneWallet.PingOneWalletClient.Builder
+    @discardableResult
+    public func setStorageManager(_ storageManagerContract: any PingOneWallet.StorageManagerContract) -> PingOneWallet.PingOneWalletClient.Builder
+    @discardableResult
+    public func setStorageErrorHandler(_ storageErrorHandler: any PingOneWallet.StorageErrorHandler) -> PingOneWallet.PingOneWalletClient.Builder
+    @discardableResult
+    public func setWalletCallbackHandler(_ walletCallbackHandler: any PingOneWallet.WalletCallbackHandler) -> PingOneWallet.PingOneWalletClient.Builder
+    @discardableResult
+    public func setPushToken(_ pushToken: Foundation.Data, isSandbox: Swift.Bool = false) -> PingOneWallet.PingOneWalletClient.Builder
+    public func build() -> DIDSDK.CompletionHandler<PingOneWallet.PingOneWalletClient>
+    @objc deinit
+  }
+}
+public struct IssuerMetadata {
+  public init(credentialIssuerMetadata: DIDSDK.CredentialIssuerMetadata)
+  public func getLogo(_ locale: Swift.String) -> Swift.String?
+  public func getLogo() -> Swift.String?
+  public func getAltTextForLogo(_ locale: Swift.String) -> Swift.String?
+  public func getAltTextForLogo() -> Swift.String?
+  public func getName(_ locale: Swift.String) -> Swift.String?
+  public func getName() -> Swift.String?
+  public func getCredentialIssuer() -> Swift.String?
+  public func isEmpty() -> Swift.Bool
+}
+extension DIDSDK.Logo {
+  public func isEmpty() -> Swift.Bool
+}
+extension DIDSDK.Display {
+  public func hasMetadata() -> Swift.Bool
+}
+extension DIDSDK.CredentialIssuerMetadata {
+  public func hasMetadata() -> Swift.Bool
+}
+public struct WalletError : PingOneWallet.WalletEvent {
+  public static var TYPE: PingOneWallet.WalletEventType
+  public var sender: Swift.String
+  public var challenge: DIDSDK.Challenge?
+  public func getType() -> PingOneWallet.WalletEventType
+  public func getError() -> PingOneWallet.WalletException
+}
+public protocol WalletCallbackHandler {
+  func handleCredentialIssuance(issuer: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, claim: DIDSDK.Claim, errors: [PingOneWallet.WalletException]) -> Swift.Bool
+  func handleCredentialRevocation(issuer: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, claimReference: DIDSDK.ClaimReference, errors: [PingOneWallet.WalletException]) -> Swift.Bool
+  func handleCredentialPresentation(sender: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, claim: [DIDSDK.Share], errors: [PingOneWallet.WalletException])
+  func handleCredentialRequest(_ presentationRequest: PingOneWallet.PresentationRequest)
+  @available(*, deprecated, renamed: "handleEvent", message: "This method is deprecated and will be removed in upcoming updates. Use handleEvent instead")
+  func handleError(_ error: PingOneWallet.WalletException)
+  func handleEvent(_ event: any PingOneWallet.WalletEvent)
+}
+extension PingOneWallet.WalletCallbackHandler {
+  public func handleError(_ error: PingOneWallet.WalletException)
+}
+@_hasMissingDesignatedInitializers public class CredentialUtils {
+  public static func getCredentialIssuerMetadataFromClaim(_ claim: DIDSDK.Claim) -> DIDSDK.CompletionHandler<PingOneWallet.IssuerMetadata>
+  public static func getCardImageFromClaim(_ claim: DIDSDK.Claim) -> Swift.String?
+  public static func getPingVersionFromClaim(_ claim: DIDSDK.Claim) -> DIDSDK.PingData?
+  @objc deinit
+}
+public enum CredentialEventType : Swift.String, Swift.Codable {
+  case CREDENTIAL_UPDATED
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CredentialAction : Swift.String, Swift.Codable {
+  case DELETE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class WalletEncryptedStorageManager : PingOneWallet.StorageManagerContract {
+  public static func initialize(errorHandler: (any PingOneWallet.StorageErrorHandler)?) -> DIDSDK.CompletionHandler<any PingOneWallet.StorageManagerContract>
+  public func setStorageErrorHandler(_ storageErrorHandler: any PingOneWallet.StorageErrorHandler)
+  public func getStorageErrorHandler() -> (any PingOneWallet.StorageErrorHandler)?
+  @available(*, deprecated, message: "This method should only be used when migrating from V1 SDK. The application instance returned here will be deleted from storage after this call so you must re-save the application instance.")
+  public func getApplicationInstance() -> DIDSDK.ApplicationInstance?
+  public func saveApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion, applicationInstance: DIDSDK.ApplicationInstance)
+  public func getApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion) -> DIDSDK.ApplicationInstance?
+  public func saveClaim(_ claim: DIDSDK.Claim)
+  public func getClaim(claimId: Swift.String) -> DIDSDK.Claim?
+  public func saveClaimReference(_ claimReference: DIDSDK.ClaimReference)
+  public func getClaimReference(claimReferenceId: Swift.String) -> DIDSDK.ClaimReference?
+  public func deleteClaim(_ claimId: Swift.String)
+  public func saveStringSet(_ set: [Swift.String], for key: Swift.String)
+  public func getStringSet(for key: Swift.String) -> [Swift.String]
+  public func saveString(_ str: Swift.String, for key: Swift.String)
+  public func getString(for key: Swift.String) -> Swift.String?
+  @objc deinit
+}
+public class DataRepository {
+  required public init(_ storageManager: any PingOneWallet.StorageManagerContract)
+  public func saveCredential(_ credential: DIDSDK.Claim)
+  public func getCredential(for id: Swift.String) -> DIDSDK.Claim?
+  public func saveCredentialReference(_ credentialReference: DIDSDK.ClaimReference)
+  public func getCredentialReference(for id: Swift.String) -> DIDSDK.ClaimReference?
+  public func isCredentialRevoked(credentialId: Swift.String) -> Swift.Bool
+  public func deleteCredential(forId id: Swift.String)
+  public func getAllCredentials() -> [DIDSDK.Claim]
+  public func getAllRegions() -> Swift.Set<PingOneWallet.PingOneRegion>
+  public func saveCredentialIds(_ credentialIds: [Swift.String])
+  public func saveCredentialReferenceIds(_ credentialReferenceIds: [Swift.String])
+  public func saveRegions(_ regions: Swift.Set<PingOneWallet.PingOneRegion>)
+  public func setStorageErrorHandler(_ storageErrorHandler: any PingOneWallet.StorageErrorHandler)
+  public func getStorageErrorHandler() -> (any PingOneWallet.StorageErrorHandler)?
+  public func saveApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion, applicationInstance: DIDSDK.ApplicationInstance)
+  public func getApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion) -> DIDSDK.ApplicationInstance?
+  public func saveString(_ str: Swift.String, for key: Swift.String)
+  public func getString(for key: Swift.String) -> Swift.String?
+  public func saveStringSet(_ set: [Swift.String], for key: Swift.String)
+  public func getStringSet(for key: Swift.String) -> [Swift.String]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EncryptedFilesHelper {
+  public func saveToFile(string: Swift.String, for fileName: Swift.String) throws
+  public func readFromFile(_ fileName: Swift.String) throws -> Swift.String?
+  public func deleteFile(withName fileName: Swift.String) throws
+  @objc deinit
+}
+public struct UnknownEvent : PingOneWallet.WalletEvent {
+  public static var TYPE: PingOneWallet.WalletEventType
+  public var applicationInstanceId: Swift.String
+  public var sender: Swift.String
+  public var challenge: DIDSDK.Challenge?
+  public func getType() -> PingOneWallet.WalletEventType
+  public func getMessage() -> Swift.String
+}
+public protocol StorageManagerContract {
+  func setStorageErrorHandler(_ storageErrorHandler: any PingOneWallet.StorageErrorHandler)
+  func getStorageErrorHandler() -> (any PingOneWallet.StorageErrorHandler)?
+  @available(*, deprecated, message: "This method should only be used when migrating from V1 SDK. The application instance returned here will be deleted from storage after this call so you must re-save the application instance.")
+  func getApplicationInstance() -> DIDSDK.ApplicationInstance?
+  func saveApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion, applicationInstance: DIDSDK.ApplicationInstance)
+  func getApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion) -> DIDSDK.ApplicationInstance?
+  func saveClaim(_ claim: DIDSDK.Claim)
+  func getClaim(claimId: Swift.String) -> DIDSDK.Claim?
+  func saveClaimReference(_ claimReference: DIDSDK.ClaimReference)
+  func getClaimReference(claimReferenceId: Swift.String) -> DIDSDK.ClaimReference?
+  func deleteClaim(_ claimId: Swift.String)
+  func saveString(_ str: Swift.String, for key: Swift.String)
+  func getString(for key: Swift.String) -> Swift.String?
+  func saveStringSet(_ set: [Swift.String], for key: Swift.String)
+  func getStringSet(for key: Swift.String) -> [Swift.String]
+}
+@_hasMissingDesignatedInitializers public class PresentationResult {
+  public func getPresentationStatus() -> DIDSDK.PresentationStatus
+  public func getDetails() -> [Swift.String : Any]?
+  @objc deinit
+}
+public struct PairingRequest {
+}
+public struct StorageKeys {
+  public static let APP_STORAGE_KEY: Swift.String
+  public static let REGIONS_STORAGE_KEY: Swift.String
+  public static let APPLICATION_INSTANCE_STORAGE_KEY: Swift.String
+  public static let CLAIM_STORAGE_KEY: Swift.String
+  public static let CLAIM_REFERENCE_STORAGE_KEY: Swift.String
+  public static let CLAIMS_STORAGE_KEY: Swift.String
+  public static let SELF_CLAIMS_STORAGE_KEY: Swift.String
+  public static let UNSOLICITED_CLAIMS_STORAGE_KEY: Swift.String
+  public static let REVOKED_CLAIMS_STORAGE_KEY: Swift.String
+}
+@_hasMissingDesignatedInitializers public class PingOneWalletClient {
+  public func registerStorageManager(_ storageManager: any PingOneWallet.StorageManagerContract)
+  public func getApplicationInstance(forRegion walletRegion: PingOneWallet.PingOneRegion) -> DIDSDK.ApplicationInstance?
+  public func getStorageManager() -> (any PingOneWallet.StorageManagerContract)!
+  public func getDataRepository() -> PingOneWallet.DataRepository!
+  public func registerCallbackHandler(_ callbackHandler: any PingOneWallet.WalletCallbackHandler)
+  public func pairWallet(for pairingRequest: PingOneWallet.PairingRequest, pushToken: Foundation.Data? = nil, isSandbox: Swift.Bool? = nil) -> DIDSDK.CompletionHandler<DIDSDK.ApplicationInstance>
+  @available(*, deprecated, renamed: "pairWallet", message: "This method is deprecated and will be removed in upcoming updates. Use other pairWallet that accepts PairingRequest as a param instead")
+  public func pairWallet(for presentationRequest: PingOneWallet.PresentationRequest, pushToken: Swift.String? = nil, isSandbox: Swift.Bool? = nil) -> DIDSDK.CompletionHandler<DIDSDK.ApplicationInstance>
+  @discardableResult
+  public func updatePushTokens(_ pushToken: Foundation.Data, isSandbox: Swift.Bool = false) -> [DIDSDK.ApplicationInstance]
+  @discardableResult
+  public func updatePushNotificationToken(_ pushToken: Foundation.Data, isSandbox: Swift.Bool = false) -> DIDSDK.CompletionHandler<Swift.Bool>
+  @discardableResult
+  public func disablePush() -> DIDSDK.CompletionHandler<Swift.Bool>
+  @available(*, deprecated, renamed: "processPingOneRequest", message: "This method is deprecated and will be removed in upcoming updates. Use processPingOneRequest instead")
+  public func processQrContent(_ qrContent: Swift.String)
+  public func processPingOneRequest(_ request: Swift.String)
+  public func processNotification(_ userInfo: [Swift.AnyHashable : Any]?) -> Swift.Bool
+  public func pollForMessages(_ pollingInterval: Foundation.TimeInterval? = nil)
+  public func stopPolling()
+  public func checkForMessages()
+  public func findMatchingCredentialsForRequest(_ request: PingOneWallet.PresentationRequest) -> PingOneWallet.PresentationMatcherResult
+  public func findMatchingCredentialsForRequest(_ request: PingOneWallet.PresentationRequest, credentials: [DIDSDK.Claim]) -> PingOneWallet.PresentationMatcherResult
+  public func presentCredentials(_ presentation: PingOneWallet.CredentialsPresentation) -> DIDSDK.CompletionHandler<PingOneWallet.PresentationResult>
+  public func createSelfClaim(_ map: [Swift.String : Swift.String], applicationInstance: DIDSDK.ApplicationInstance) -> DIDSDK.CompletionHandler<DIDSDK.Claim>
+  public func reportCredentialDeletion(claim: DIDSDK.Claim)
+  @objc deinit
+}
+extension PingOneWallet.PingOneWalletClient : DIDSDK.LinkHandler {
+  public func handleOpenID4VerifiablePresentationRequest(request: DIDSDK.VerifiablePresentationRequest, openIDVerifiableCredentialsClient: DIDSDK.OpenIDVerifiableCredentialsClient)
+  public func handleRequest(request: DIDSDK.Request)
+  public func handleError(error: any Swift.Error)
+}
+extension PingOneWallet.PingOneWalletClient {
+  public func handleShare(senderId: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, shares: [DIDSDK.Share], errors: [DIDSDK.ClaimError], appInstance: DIDSDK.ApplicationInstance)
+  public func handleShareRequest(senderId: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, requestedKeys: [Swift.String], appInstance: DIDSDK.ApplicationInstance)
+  public func handleClaim(senderId: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, claim: DIDSDK.Claim, errors: [DIDSDK.ClaimError], appInstance: DIDSDK.ApplicationInstance)
+  public func handleExpiredClaim(senderId: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, expiredClaim: DIDSDK.ClaimReference, errors: [DIDSDK.ClaimError], appInstance: DIDSDK.ApplicationInstance)
+  public func handleSecureMessage(senderId: Swift.String, message: Swift.String?, challenge: DIDSDK.Challenge?, appInstance: DIDSDK.ApplicationInstance)
+  public func handleError(error: DIDSDK.MessageProcessingError, appInstance: DIDSDK.ApplicationInstance)
+  public func handleRequest(request: DIDSDK.Request, appInstance: DIDSDK.ApplicationInstance)
+  public func handleError(error: any Swift.Error, appInstance: DIDSDK.ApplicationInstance)
+}
+public enum StorageError : Swift.Error, Foundation.LocalizedError {
+  case jsonEncodingFailed(underlyingError: (any Swift.Error)?)
+  case jsonDecodingFailed(underlyingError: (any Swift.Error)?)
+  case encryptionFailed(underlyingError: (any Swift.Error)?)
+  case decryptionFailed(underlyingError: (any Swift.Error)?)
+  case cannotAccessFileStorage(underlyingError: (any Swift.Error)?)
+  case cannotDeleteKey(key: Swift.String, debugDescripton: Swift.String?, underlyingError: (any Swift.Error)?)
+  case cannotStoreValueForKey(key: Swift.String, value: Swift.String?, debugDescripton: Swift.String?, underlyingError: (any Swift.Error)?)
+  case cannotRetrieveValueForKey(key: Swift.String, debugDescripton: Swift.String?, underlyingError: (any Swift.Error)?)
+  public var underlyingError: (any Swift.Error)? {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol StorageErrorHandler {
+  func handleStorageError(_ error: PingOneWallet.StorageError)
+}
+@propertyWrapper public struct CodableIgnore<T> : Swift.Codable {
+  public var wrappedValue: T?
+  public init(wrappedValue: T?)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension Swift.KeyedDecodingContainer {
+  public func decode<T>(_ type: PingOneWallet.CodableIgnore<T>.Type, forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> PingOneWallet.CodableIgnore<T>
+}
+extension Swift.KeyedEncodingContainer {
+  public mutating func encode<T>(_ value: PingOneWallet.CodableIgnore<T>, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+}
+public struct PingOneRegion : Swift.Hashable, Swift.Codable {
+  public static let NA: PingOneWallet.PingOneRegion
+  public static let EU: PingOneWallet.PingOneRegion
+  public static let APAC: PingOneWallet.PingOneRegion
+  public static let APAC_2: PingOneWallet.PingOneRegion
+  public static let CA: PingOneWallet.PingOneRegion
+  public static func initForUrl(_ requestUrl: Swift.String) -> PingOneWallet.PingOneRegion
+  public func getKey() -> Swift.String
+  public func getUrl() -> Swift.String
+  public static func == (lhs: PingOneWallet.PingOneRegion, rhs: PingOneWallet.PingOneRegion) -> Swift.Bool
+  public static func getRegionForHost(_ host: Swift.String) -> PingOneWallet.PingOneRegion?
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StorageSecureKey : Swift.Codable {
+  public let encryptedKey: Foundation.Data
+  public let uniqueId: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum WalletException : Swift.Error, Foundation.LocalizedError {
+  case cannotProcessUrl(url: Swift.String, debugDescription: Swift.String?)
+  case cannotParseRequest(underlyingError: any Swift.Error)
+  case messageProcessingError(underlyingError: any Swift.Error)
+  case claimError(claimError: DIDSDK.ClaimError)
+  case cannotPresent(debugDescription: Swift.String)
+  case cannotPairWallet(debugDescription: Swift.String?, underlyingError: (any Swift.Error)?)
+  case cannotInitDidClient(debugDescription: Swift.String)
+  case cannotDetermineRegion(debugDescription: Swift.String)
+  case cannotShareInformation(underlyingErrors: [any Swift.Error])
+  case failedToUpdateApplicationInstance(id: Swift.String, debugDescription: Swift.String)
+  case cannotUpdateApplicationInstances(underlyingErrors: [any Swift.Error])
+  case mustInitClientWithApplicationInstance(debugDescription: Swift.String)
+  public var claimError: DIDSDK.ClaimError? {
+    get
+  }
+  public var underlyingErrors: [any Swift.Error]? {
+    get
+  }
+  public var underlyingError: (any Swift.Error)? {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class CredentialsPresentation {
+  convenience public init(presentationRequest: PingOneWallet.PresentationRequest)
+  public func getApplicationInstanceId() -> Swift.String
+  public func isEmpty() -> Swift.Bool
+  public func getPresentationRequest() -> PingOneWallet.PresentationRequest
+  @discardableResult
+  public func addClaimForKeys(_ claim: DIDSDK.Claim, keys: [Swift.String]) -> PingOneWallet.CredentialsPresentation
+  @objc deinit
+}
+public struct ClaimKeys {
+  public static let cardImage: Swift.String
+  public static let cardType: Swift.String
+}
+public struct RequestedKey {
+  public static func parseFromStringWith(regex: Swift.String, string: Swift.String) -> [Swift.String]?
+  public func getCardType() -> Swift.String?
+  public func getCardKey() -> Swift.String?
+  public func getIssuerIds() -> [Swift.String]?
+  public func getRawKey() -> Swift.String
+}
+public protocol WalletEvent {
+  static var TYPE: PingOneWallet.WalletEventType { get }
+  var sender: Swift.String { get }
+  var challenge: DIDSDK.Challenge? { get }
+  func getType() -> PingOneWallet.WalletEventType
+  func getSender() -> Swift.String
+  func getChalllenge() -> DIDSDK.Challenge?
+}
+extension PingOneWallet.WalletEvent {
+  public func getSender() -> Swift.String
+  public func getChalllenge() -> DIDSDK.Challenge?
+}
+public enum WalletEventType : Swift.String {
+  case ERROR
+  case PAIRING
+  case CREDENTIAL_UPDATE
+  case UNKNOWN
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct WalletPairingEvent : PingOneWallet.WalletEvent {
+  public static var TYPE: PingOneWallet.WalletEventType
+  public var applicationInstanceId: Swift.String
+  public var sender: Swift.String
+  public var challenge: DIDSDK.Challenge?
+  public func getType() -> PingOneWallet.WalletEventType
+  public func getPairingEventType() -> PingOneWallet.WalletPairingEventType
+  public func getPairingRequest() -> PingOneWallet.PairingRequest
+  public func isSuccess() -> Swift.Bool?
+  public func getError() -> PingOneWallet.WalletException?
+}
+public enum WalletPairingEventType : Swift.String, Swift.Codable {
+  case PAIRING_RESPONSE
+  case PAIRING_REQUEST
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PairingError : Swift.String, Swift.Error, Foundation.LocalizedError, Swift.Codable {
+  case WALLET_ALREADY_PAIRED, WALLET_DISABLED, APP_PACKAGE_MISMATCH, UNEXPECTED_ERROR
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PushNotificationBody : Swift.Codable {
+  public var credentialId: Swift.String
+  public var credentialName: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public func logLine(_ message: Any, fileName: Swift.String = #fileID, functionName: Swift.String = #function, lineNumber: Swift.Int = #line)
+public func log(_ message: Any, fileName: Swift.String = #fileID, functionName: Swift.String = #function, lineNumber: Swift.Int = #line)
+public func logerror(_ message: Any, fileName: Swift.String = #fileID, functionName: Swift.String = #function, lineNumber: Swift.Int = #line)
+public func logattention(_ message: Any, fileName: Swift.String = #fileID, functionName: Swift.String = #function, lineNumber: Swift.Int = #line)
+@_hasMissingDesignatedInitializers public class PresentationRequest {
+  public func isNativePresentationRequest() -> Swift.Bool
+  public func setApplicationInstanceId(_ appInstanceId: Swift.String)
+  public func getApplicationInstanceId() -> Swift.String
+  public func getRequestor() -> Swift.String?
+  public func getSessionId() -> Swift.String?
+  public func isSessionExpired() -> Swift.Bool
+  public func getAction() -> Swift.String?
+  public func getPurpose(forKey key: Swift.String? = nil) -> Swift.String?
+  public func getKeys() -> [PingOneWallet.RequestedKey]
+  public func getStringKeys() -> [Swift.String]
+  public func isPairingRequest() -> Swift.Bool
+  public func getPairingRequest() -> PingOneWallet.PairingRequest?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CredentialMatcherResult {
+  final public let requestedKeys: [Swift.String]
+  final public let claims: [DIDSDK.Claim]
+  @objc deinit
+}
+extension PingOneWallet.CredentialEventType : Swift.Equatable {}
+extension PingOneWallet.CredentialEventType : Swift.Hashable {}
+extension PingOneWallet.CredentialEventType : Swift.RawRepresentable {}
+extension PingOneWallet.CredentialAction : Swift.Equatable {}
+extension PingOneWallet.CredentialAction : Swift.Hashable {}
+extension PingOneWallet.CredentialAction : Swift.RawRepresentable {}
+extension PingOneWallet.WalletEventType : Swift.Equatable {}
+extension PingOneWallet.WalletEventType : Swift.Hashable {}
+extension PingOneWallet.WalletEventType : Swift.RawRepresentable {}
+extension PingOneWallet.WalletPairingEventType : Swift.Equatable {}
+extension PingOneWallet.WalletPairingEventType : Swift.Hashable {}
+extension PingOneWallet.WalletPairingEventType : Swift.RawRepresentable {}
+extension PingOneWallet.PairingError : Swift.Equatable {}
+extension PingOneWallet.PairingError : Swift.Hashable {}
+extension PingOneWallet.PairingError : Swift.RawRepresentable {}

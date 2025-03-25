@@ -1,0 +1,11 @@
+framework module PingOneWallet {
+  umbrella header "PingOneWallet.h"
+  export *
+
+  module * { export * }
+}
+
+module PingOneWallet.Swift {
+  header "PingOneWallet-Swift.h"
+  requires objc
+}

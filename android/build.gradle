@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    lintOptions {
+       warning 'InvalidPackage'
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+}
+
+dependencies {
+    api 'com.facebook.react:react-native:+'
+
+    implementation fileTree(dir: './SDK/', include: ['*.aar', '*.jar'], exclude: [])
+
+    // RxJava
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.12'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    // GSON
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.bitbucket.b_c:jose4j:0.8.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.12'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.7.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.9.3'
+    implementation 'io.github.erdtman:java-json-canonicalization:1.1'
+    implementation 'androidx.security:security-crypto:1.1.0-alpha04'
+    implementation 'androidx.security:security-identity-credential:1.0.0-alpha03'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'javax.inject:javax.inject:1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+
+    implementation 'com.squareup.moshi:moshi:1.14.0'
+    runtimeOnly 'com.squareup.moshi:moshi-adapters:1.14.0'
+}

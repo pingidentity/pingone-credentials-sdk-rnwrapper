@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22BE53552D8B2136004EA50B /* PingOneCredentialsSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE53522D8B2136004EA50B /* PingOneCredentialsSDK.swift */; };
+		22BE53562D8B2136004EA50B /* PingOneCredentialsSDKBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE53532D8B2136004EA50B /* PingOneCredentialsSDKBridge.m */; };
+		22BE53642D8B3FD7004EA50B /* PingOneWallet.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE53612D8B3FD7004EA50B /* PingOneWallet.xcframework */; };
+		22BE53652D8B3FD7004EA50B /* JOSESwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE535E2D8B3FD7004EA50B /* JOSESwift.xcframework */; };
+		22BE53662D8B3FD7004EA50B /* CommunicationManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE535B2D8B3FD7004EA50B /* CommunicationManager.xcframework */; };
+		22BE53672D8B3FD7004EA50B /* JoseTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE535F2D8B3FD7004EA50B /* JoseTools.xcframework */; };
+		22BE53682D8B3FD7004EA50B /* AnyCoder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE535A2D8B3FD7004EA50B /* AnyCoder.xcframework */; };
+		22BE53692D8B3FD7004EA50B /* CryptoTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE535C2D8B3FD7004EA50B /* CryptoTools.xcframework */; };
+		22BE536A2D8B3FD7004EA50B /* DIDSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE535D2D8B3FD7004EA50B /* DIDSDK.xcframework */; };
+		22BE536B2D8B3FD7004EA50B /* secp256k1Wrapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE53622D8B3FD7004EA50B /* secp256k1Wrapper.xcframework */; };
+		22BE536C2D8B3FD7004EA50B /* libsecp256k1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BE53602D8B3FD7004EA50B /* libsecp256k1.xcframework */; };
+		22BE536E2D8B6336004EA50B /* PingOneWalletHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE536D2D8B6336004EA50B /* PingOneWalletHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22BE533E2D8B09A2004EA50B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		22BE53402D8B09A2004EA50B /* libRNPingOneCredentialsSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNPingOneCredentialsSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BE53522D8B2136004EA50B /* PingOneCredentialsSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingOneCredentialsSDK.swift; sourceTree = "<group>"; };
+		22BE53532D8B2136004EA50B /* PingOneCredentialsSDKBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingOneCredentialsSDKBridge.m; sourceTree = "<group>"; };
+		22BE53572D8B2D82004EA50B /* RNPingOneCredentialsSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNPingOneCredentialsSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		22BE535A2D8B3FD7004EA50B /* AnyCoder.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AnyCoder.xcframework; sourceTree = "<group>"; };
+		22BE535B2D8B3FD7004EA50B /* CommunicationManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CommunicationManager.xcframework; sourceTree = "<group>"; };
+		22BE535C2D8B3FD7004EA50B /* CryptoTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = CryptoTools.xcframework; sourceTree = "<group>"; };
+		22BE535D2D8B3FD7004EA50B /* DIDSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DIDSDK.xcframework; sourceTree = "<group>"; };
+		22BE535E2D8B3FD7004EA50B /* JOSESwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JOSESwift.xcframework; sourceTree = "<group>"; };
+		22BE535F2D8B3FD7004EA50B /* JoseTools.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = JoseTools.xcframework; sourceTree = "<group>"; };
+		22BE53602D8B3FD7004EA50B /* libsecp256k1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libsecp256k1.xcframework; sourceTree = "<group>"; };
+		22BE53612D8B3FD7004EA50B /* PingOneWallet.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PingOneWallet.xcframework; sourceTree = "<group>"; };
+		22BE53622D8B3FD7004EA50B /* secp256k1Wrapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = secp256k1Wrapper.xcframework; sourceTree = "<group>"; };
+		22BE536D2D8B6336004EA50B /* PingOneWalletHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingOneWalletHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22BE533D2D8B09A2004EA50B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22BE53642D8B3FD7004EA50B /* PingOneWallet.xcframework in Frameworks */,
+				22BE53652D8B3FD7004EA50B /* JOSESwift.xcframework in Frameworks */,
+				22BE53662D8B3FD7004EA50B /* CommunicationManager.xcframework in Frameworks */,
+				22BE53672D8B3FD7004EA50B /* JoseTools.xcframework in Frameworks */,
+				22BE53682D8B3FD7004EA50B /* AnyCoder.xcframework in Frameworks */,
+				22BE53692D8B3FD7004EA50B /* CryptoTools.xcframework in Frameworks */,
+				22BE536A2D8B3FD7004EA50B /* DIDSDK.xcframework in Frameworks */,
+				22BE536B2D8B3FD7004EA50B /* secp256k1Wrapper.xcframework in Frameworks */,
+				22BE536C2D8B3FD7004EA50B /* libsecp256k1.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22BE53372D8B09A2004EA50B = {
+			isa = PBXGroup;
+			children = (
+				22BE53572D8B2D82004EA50B /* RNPingOneCredentialsSDK-Bridging-Header.h */,
+				22BE53632D8B3FD7004EA50B /* SDK */,
+				22BE53522D8B2136004EA50B /* PingOneCredentialsSDK.swift */,
+				22BE53532D8B2136004EA50B /* PingOneCredentialsSDKBridge.m */,
+				22BE536D2D8B6336004EA50B /* PingOneWalletHelper.swift */,
+				22BE53412D8B09A2004EA50B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22BE53412D8B09A2004EA50B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22BE53402D8B09A2004EA50B /* libRNPingOneCredentialsSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22BE53632D8B3FD7004EA50B /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				22BE535A2D8B3FD7004EA50B /* AnyCoder.xcframework */,
+				22BE535B2D8B3FD7004EA50B /* CommunicationManager.xcframework */,
+				22BE535C2D8B3FD7004EA50B /* CryptoTools.xcframework */,
+				22BE535D2D8B3FD7004EA50B /* DIDSDK.xcframework */,
+				22BE535E2D8B3FD7004EA50B /* JOSESwift.xcframework */,
+				22BE535F2D8B3FD7004EA50B /* JoseTools.xcframework */,
+				22BE53602D8B3FD7004EA50B /* libsecp256k1.xcframework */,
+				22BE53612D8B3FD7004EA50B /* PingOneWallet.xcframework */,
+				22BE53622D8B3FD7004EA50B /* secp256k1Wrapper.xcframework */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22BE533F2D8B09A2004EA50B /* RNPingOneCredentialsSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22BE534A2D8B09A2004EA50B /* Build configuration list for PBXNativeTarget "RNPingOneCredentialsSDK" */;
+			buildPhases = (
+				22BE533C2D8B09A2004EA50B /* Sources */,
+				22BE533D2D8B09A2004EA50B /* Frameworks */,
+				22BE533E2D8B09A2004EA50B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNPingOneCredentialsSDK;
+			packageProductDependencies = (
+			);
+			productName = RNPingOneCredentialsSDK;
+			productReference = 22BE53402D8B09A2004EA50B /* libRNPingOneCredentialsSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22BE53382D8B09A2004EA50B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					22BE533F2D8B09A2004EA50B = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+					};
+				};
+			};
+			buildConfigurationList = 22BE533B2D8B09A2004EA50B /* Build configuration list for PBXProject "RNPingOneCredentialsSDK" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22BE53372D8B09A2004EA50B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 22BE53412D8B09A2004EA50B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22BE533F2D8B09A2004EA50B /* RNPingOneCredentialsSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22BE533C2D8B09A2004EA50B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22BE536E2D8B6336004EA50B /* PingOneWalletHelper.swift in Sources */,
+				22BE53552D8B2136004EA50B /* PingOneCredentialsSDK.swift in Sources */,
+				22BE53562D8B2136004EA50B /* PingOneCredentialsSDKBridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		22BE53482D8B09A2004EA50B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		22BE53492D8B09A2004EA50B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22BE534B2D8B09A2004EA50B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5DDY6G28G;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNPingOneCredentialsSDK-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22BE534C2D8B09A2004EA50B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L5DDY6G28G;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNPingOneCredentialsSDK-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22BE533B2D8B09A2004EA50B /* Build configuration list for PBXProject "RNPingOneCredentialsSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22BE53482D8B09A2004EA50B /* Debug */,
+				22BE53492D8B09A2004EA50B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22BE534A2D8B09A2004EA50B /* Build configuration list for PBXNativeTarget "RNPingOneCredentialsSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22BE534B2D8B09A2004EA50B /* Debug */,
+				22BE534C2D8B09A2004EA50B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22BE53382D8B09A2004EA50B /* Project object */;
+}

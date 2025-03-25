@@ -1,0 +1,5195 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "CommunicationManager",
+    "printedName": "CommunicationManager",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CoderProtocol",
+        "printedName": "CoderProtocol",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "contentType",
+            "printedName": "contentType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13CoderProtocolP11contentTypeSSvp",
+            "mangledName": "$s20CommunicationManager13CoderProtocolP11contentTypeSSvp",
+            "moduleName": "CommunicationManager",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13CoderProtocolP11contentTypeSSvg",
+                "mangledName": "$s20CommunicationManager13CoderProtocolP11contentTypeSSvg",
+                "moduleName": "CommunicationManager",
+                "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.CoderProtocol>",
+                "sugared_genericSig": "<Self where Self : CommunicationManager.CoderProtocol>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "encodeRequestBody",
+            "printedName": "encodeRequestBody(requestBody:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RequestBody",
+                "printedName": "CommunicationManager.RequestBody",
+                "usr": "s:20CommunicationManager11RequestBodyC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager13CoderProtocolP17encodeRequestBody07requestG010Foundation4DataVAA0fG0C_tKF",
+            "mangledName": "$s20CommunicationManager13CoderProtocolP17encodeRequestBody07requestG010Foundation4DataVAA0fG0C_tKF",
+            "moduleName": "CommunicationManager",
+            "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.CoderProtocol>",
+            "sugared_genericSig": "<Self where Self : CommunicationManager.CoderProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeResponseData",
+            "printedName": "decodeResponseData(responseData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager13CoderProtocolP18decodeResponseData08responseG0yp10Foundation0G0V_tKF",
+            "mangledName": "$s20CommunicationManager13CoderProtocolP18decodeResponseData08responseG0yp10Foundation0G0V_tKF",
+            "moduleName": "CommunicationManager",
+            "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.CoderProtocol>",
+            "sugared_genericSig": "<Self where Self : CommunicationManager.CoderProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:20CommunicationManager13CoderProtocolP",
+        "mangledName": "$s20CommunicationManager13CoderProtocolP",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JsonSerializableProtocol",
+        "printedName": "JsonSerializableProtocol",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(jsonString:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager24JsonSerializableProtocolP10jsonStringxSS_tKcfc",
+            "mangledName": "$s20CommunicationManager24JsonSerializableProtocolP10jsonStringxSS_tKcfc",
+            "moduleName": "CommunicationManager",
+            "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.JsonSerializableProtocol>",
+            "sugared_genericSig": "<Self where Self : CommunicationManager.JsonSerializableProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager24JsonSerializableProtocolP12toDictionarySDySSypGyKF",
+            "mangledName": "$s20CommunicationManager24JsonSerializableProtocolP12toDictionarySDySSypGyKF",
+            "moduleName": "CommunicationManager",
+            "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.JsonSerializableProtocol>",
+            "sugared_genericSig": "<Self where Self : CommunicationManager.JsonSerializableProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toJsonString",
+            "printedName": "toJsonString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager24JsonSerializableProtocolP02toC6StringSSyKF",
+            "mangledName": "$s20CommunicationManager24JsonSerializableProtocolP02toC6StringSSyKF",
+            "moduleName": "CommunicationManager",
+            "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.JsonSerializableProtocol>",
+            "sugared_genericSig": "<Self where Self : CommunicationManager.JsonSerializableProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(jsonString:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager24JsonSerializableProtocolPA2A0cD6ObjectCRbzrlE10jsonStringxSS_tKcfc",
+            "mangledName": "$s20CommunicationManager24JsonSerializableProtocolPA2A0cD6ObjectCRbzrlE10jsonStringxSS_tKcfc",
+            "moduleName": "CommunicationManager",
+            "genericSig": "<τ_0_0 where τ_0_0 : CommunicationManager.JsonSerializableObject, τ_0_0 : CommunicationManager.JsonSerializableProtocol>",
+            "sugared_genericSig": "<Self where Self : CommunicationManager.JsonSerializableObject, Self : CommunicationManager.JsonSerializableProtocol>",
+            "isFromExtension": true,
+            "throwing": true,
+            "init_kind": "Convenience"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:20CommunicationManager24JsonSerializableProtocolP",
+        "mangledName": "$s20CommunicationManager24JsonSerializableProtocolP",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JsonSerializableObject",
+        "printedName": "JsonSerializableObject",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "JsonSerializableObject",
+                "printedName": "CommunicationManager.JsonSerializableObject",
+                "usr": "s:20CommunicationManager22JsonSerializableObjectC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager22JsonSerializableObjectCACycfc",
+            "mangledName": "$s20CommunicationManager22JsonSerializableObjectCACycfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(dict:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "JsonSerializableObject",
+                "printedName": "CommunicationManager.JsonSerializableObject",
+                "usr": "s:20CommunicationManager22JsonSerializableObjectC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager22JsonSerializableObjectC4dictACSDySSypG_tKcfc",
+            "mangledName": "$s20CommunicationManager22JsonSerializableObjectC4dictACSDySSypG_tKcfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "Convenience",
+              "Required",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Function",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager22JsonSerializableObjectC12toDictionarySDySSypGyKF",
+            "mangledName": "$s20CommunicationManager22JsonSerializableObjectC12toDictionarySDySSypGyKF",
+            "moduleName": "CommunicationManager",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toJsonString",
+            "printedName": "toJsonString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager22JsonSerializableObjectC02toC6StringSSyKF",
+            "mangledName": "$s20CommunicationManager22JsonSerializableObjectC02toC6StringSSyKF",
+            "moduleName": "CommunicationManager",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager22JsonSerializableObjectC",
+        "mangledName": "$s20CommunicationManager22JsonSerializableObjectC",
+        "moduleName": "CommunicationManager",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NetworkRetryManager",
+        "printedName": "NetworkRetryManager",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(maxRetries:timeUnit:maxDelay:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkRetryManager",
+                "printedName": "CommunicationManager.NetworkRetryManager",
+                "usr": "s:20CommunicationManager012NetworkRetryB0C"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager012NetworkRetryB0C10maxRetries8timeUnit0E5DelayACSi_S2dtcfc",
+            "mangledName": "$s20CommunicationManager012NetworkRetryB0C10maxRetries8timeUnit0E5DelayACSi_S2dtcfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(urlRequest:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.Data?, CommunicationManager.RequestError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Foundation.Data?, CommunicationManager.RequestError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.Data?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "CommunicationManager.RequestError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RequestError",
+                            "printedName": "CommunicationManager.RequestError",
+                            "usr": "s:20CommunicationManager12RequestErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager012NetworkRetryB0C6handle10urlRequest10completiony10Foundation10URLRequestV_yAG4DataVSg_AA0G5ErrorOSgtctF",
+            "mangledName": "$s20CommunicationManager012NetworkRetryB0C6handle10urlRequest10completiony10Foundation10URLRequestV_yAG4DataVSg_AA0G5ErrorOSgtctF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager012NetworkRetryB0C",
+        "mangledName": "$s20CommunicationManager012NetworkRetryB0C",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RequestError",
+        "printedName": "RequestError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "cannotCreateURL",
+            "printedName": "cannotCreateURL",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.RequestError.Type) -> (Swift.String) -> CommunicationManager.RequestError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> CommunicationManager.RequestError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.RequestError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager12RequestErrorO15cannotCreateURLyACSScACmF",
+            "mangledName": "$s20CommunicationManager12RequestErrorO15cannotCreateURLyACSScACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "failedToParseJson",
+            "printedName": "failedToParseJson",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.RequestError.Type) -> ((any Swift.Error)?, Swift.String) -> CommunicationManager.RequestError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?, Swift.String) -> CommunicationManager.RequestError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "((any Swift.Error)?, description: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.RequestError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager12RequestErrorO17failedToParseJsonyACs0D0_pSg_SStcACmF",
+            "mangledName": "$s20CommunicationManager12RequestErrorO17failedToParseJsonyACs0D0_pSg_SStcACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "cannotSerializeRequestBody",
+            "printedName": "cannotSerializeRequestBody",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.RequestError.Type) -> ((any Swift.Error)?, Swift.String) -> CommunicationManager.RequestError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?, Swift.String) -> CommunicationManager.RequestError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "((any Swift.Error)?, description: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.RequestError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager12RequestErrorO015cannotSerializeC4BodyyACs0D0_pSg_SStcACmF",
+            "mangledName": "$s20CommunicationManager12RequestErrorO015cannotSerializeC4BodyyACs0D0_pSg_SStcACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "cannotParseResponse",
+            "printedName": "cannotParseResponse",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.RequestError.Type) -> ((any Swift.Error)?, Swift.String) -> CommunicationManager.RequestError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?, Swift.String) -> CommunicationManager.RequestError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "((any Swift.Error)?, description: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "(any Swift.Error)?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "any Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.RequestError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager12RequestErrorO19cannotParseResponseyACs0D0_pSg_SStcACmF",
+            "mangledName": "$s20CommunicationManager12RequestErrorO19cannotParseResponseyACs0D0_pSg_SStcACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "requestFailedWithError",
+            "printedName": "requestFailedWithError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.RequestError.Type) -> (Swift.String, Swift.Int?) -> CommunicationManager.RequestError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String, Swift.Int?) -> CommunicationManager.RequestError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Swift.String, Swift.Int?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.RequestError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager12RequestErrorO017requestFailedWithD0yACSS_SiSgtcACmF",
+            "mangledName": "$s20CommunicationManager12RequestErrorO017requestFailedWithD0yACSS_SiSgtcACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "requestTimedOut",
+            "printedName": "requestTimedOut",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.RequestError.Type) -> CommunicationManager.RequestError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RequestError",
+                    "printedName": "CommunicationManager.RequestError",
+                    "usr": "s:20CommunicationManager12RequestErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.RequestError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RequestError",
+                        "printedName": "CommunicationManager.RequestError",
+                        "usr": "s:20CommunicationManager12RequestErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager12RequestErrorO15requestTimedOutyA2CmF",
+            "mangledName": "$s20CommunicationManager12RequestErrorO15requestTimedOutyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager12RequestErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s20CommunicationManager12RequestErrorO16errorDescriptionSSSgvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager12RequestErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s20CommunicationManager12RequestErrorO16errorDescriptionSSSgvg",
+                "moduleName": "CommunicationManager",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RequestError",
+                "printedName": "CommunicationManager.RequestError",
+                "usr": "s:20CommunicationManager12RequestErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RequestError",
+                "printedName": "CommunicationManager.RequestError",
+                "usr": "s:20CommunicationManager12RequestErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager12RequestErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s20CommunicationManager12RequestErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:20CommunicationManager12RequestErrorO",
+        "mangledName": "$s20CommunicationManager12RequestErrorO",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RequestHeader",
+        "printedName": "RequestHeader",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "header_content_type",
+            "printedName": "header_content_type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC19header_content_typeSSvpZ",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC19header_content_typeSSvpZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC19header_content_typeSSvgZ",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC19header_content_typeSSvgZ",
+                "moduleName": "CommunicationManager",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "header_content_type_json",
+            "printedName": "header_content_type_json",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC24header_content_type_jsonSSvpZ",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC24header_content_type_jsonSSvpZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC24header_content_type_jsonSSvgZ",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC24header_content_type_jsonSSvgZ",
+                "moduleName": "CommunicationManager",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "header_content_type_urlencoded",
+            "printedName": "header_content_type_urlencoded",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC30header_content_type_urlencodedSSvpZ",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC30header_content_type_urlencodedSSvpZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC30header_content_type_urlencodedSSvgZ",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC30header_content_type_urlencodedSSvgZ",
+                "moduleName": "CommunicationManager",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "header_content_type_jwks",
+            "printedName": "header_content_type_jwks",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC24header_content_type_jwksSSvpZ",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC24header_content_type_jwksSSvpZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC24header_content_type_jwksSSvgZ",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC24header_content_type_jwksSSvgZ",
+                "moduleName": "CommunicationManager",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "header_content_type_jwt",
+            "printedName": "header_content_type_jwt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC23header_content_type_jwtSSvpZ",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC23header_content_type_jwtSSvpZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC23header_content_type_jwtSSvgZ",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC23header_content_type_jwtSSvgZ",
+                "moduleName": "CommunicationManager",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "header_content_type_text_plain",
+            "printedName": "header_content_type_text_plain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC30header_content_type_text_plainSSvpZ",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC30header_content_type_text_plainSSvpZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC30header_content_type_text_plainSSvgZ",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC30header_content_type_text_plainSSvgZ",
+                "moduleName": "CommunicationManager",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(headers:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestHeader",
+                "printedName": "CommunicationManager.RequestHeader",
+                "usr": "s:20CommunicationManager13RequestHeaderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager13RequestHeaderC7headersACSDyS2SG_tcfc",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC7headersACSDyS2SG_tcfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestHeader",
+                "printedName": "CommunicationManager.RequestHeader",
+                "usr": "s:20CommunicationManager13RequestHeaderC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager13RequestHeaderCACycfc",
+            "mangledName": "$s20CommunicationManager13RequestHeaderCACycfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:20CommunicationManager13RequestHeaderCySSSgSScip",
+            "mangledName": "$s20CommunicationManager13RequestHeaderCySSSgSScip",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderCySSSgSScig",
+                "mangledName": "$s20CommunicationManager13RequestHeaderCySSSgSScig",
+                "moduleName": "CommunicationManager",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderCySSSgSScis",
+                "mangledName": "$s20CommunicationManager13RequestHeaderCySSSgSScis",
+                "moduleName": "CommunicationManager",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderCySSSgSSciM",
+                "mangledName": "$s20CommunicationManager13RequestHeaderCySSSgSSciM",
+                "moduleName": "CommunicationManager",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "setHeaderField",
+            "printedName": "setHeaderField(_:headerValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestHeader",
+                "printedName": "CommunicationManager.RequestHeader",
+                "usr": "s:20CommunicationManager13RequestHeaderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager13RequestHeaderC03setD5Field_11headerValueACSS_SStF",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC03setD5Field_11headerValueACSS_SStF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "isEmpty",
+            "printedName": "isEmpty",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC7isEmptySbvp",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC7isEmptySbvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC7isEmptySbvg",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC7isEmptySbvg",
+                "moduleName": "CommunicationManager",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager13RequestHeaderC11descriptionSSvp",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC11descriptionSSvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager13RequestHeaderC11descriptionSSvg",
+                "mangledName": "$s20CommunicationManager13RequestHeaderC11descriptionSSvg",
+                "moduleName": "CommunicationManager",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "makeIterator",
+            "printedName": "makeIterator()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Iterator",
+                "printedName": "Swift.Dictionary<Swift.String, Swift.String>.Iterator",
+                "usr": "s:SD8IteratorV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager13RequestHeaderC12makeIteratorSD0F0VyS2S_GyF",
+            "mangledName": "$s20CommunicationManager13RequestHeaderC12makeIteratorSD0F0VyS2S_GyF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager13RequestHeaderC",
+        "mangledName": "$s20CommunicationManager13RequestHeaderC",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(key: Swift.String, value: Swift.String)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.Dictionary<Swift.String, Swift.String>.Iterator",
+                    "usr": "s:SD8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HttpMethod",
+        "printedName": "HttpMethod",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "POST",
+            "printedName": "POST",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.HttpMethod.Type) -> CommunicationManager.HttpMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HttpMethod",
+                    "printedName": "CommunicationManager.HttpMethod",
+                    "usr": "s:20CommunicationManager10HttpMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.HttpMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HttpMethod",
+                        "printedName": "CommunicationManager.HttpMethod",
+                        "usr": "s:20CommunicationManager10HttpMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager10HttpMethodO4POSTyA2CmF",
+            "mangledName": "$s20CommunicationManager10HttpMethodO4POSTyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "GET",
+            "printedName": "GET",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.HttpMethod.Type) -> CommunicationManager.HttpMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HttpMethod",
+                    "printedName": "CommunicationManager.HttpMethod",
+                    "usr": "s:20CommunicationManager10HttpMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.HttpMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HttpMethod",
+                        "printedName": "CommunicationManager.HttpMethod",
+                        "usr": "s:20CommunicationManager10HttpMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager10HttpMethodO3GETyA2CmF",
+            "mangledName": "$s20CommunicationManager10HttpMethodO3GETyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "PUT",
+            "printedName": "PUT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.HttpMethod.Type) -> CommunicationManager.HttpMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HttpMethod",
+                    "printedName": "CommunicationManager.HttpMethod",
+                    "usr": "s:20CommunicationManager10HttpMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.HttpMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HttpMethod",
+                        "printedName": "CommunicationManager.HttpMethod",
+                        "usr": "s:20CommunicationManager10HttpMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager10HttpMethodO3PUTyA2CmF",
+            "mangledName": "$s20CommunicationManager10HttpMethodO3PUTyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "DELETE",
+            "printedName": "DELETE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.HttpMethod.Type) -> CommunicationManager.HttpMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HttpMethod",
+                    "printedName": "CommunicationManager.HttpMethod",
+                    "usr": "s:20CommunicationManager10HttpMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.HttpMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HttpMethod",
+                        "printedName": "CommunicationManager.HttpMethod",
+                        "usr": "s:20CommunicationManager10HttpMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager10HttpMethodO6DELETEyA2CmF",
+            "mangledName": "$s20CommunicationManager10HttpMethodO6DELETEyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "PATCH",
+            "printedName": "PATCH",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.HttpMethod.Type) -> CommunicationManager.HttpMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HttpMethod",
+                    "printedName": "CommunicationManager.HttpMethod",
+                    "usr": "s:20CommunicationManager10HttpMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.HttpMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HttpMethod",
+                        "printedName": "CommunicationManager.HttpMethod",
+                        "usr": "s:20CommunicationManager10HttpMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager10HttpMethodO5PATCHyA2CmF",
+            "mangledName": "$s20CommunicationManager10HttpMethodO5PATCHyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CommunicationManager.HttpMethod?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HttpMethod",
+                    "printedName": "CommunicationManager.HttpMethod",
+                    "usr": "s:20CommunicationManager10HttpMethodO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager10HttpMethodO8rawValueACSgSS_tcfc",
+            "mangledName": "$s20CommunicationManager10HttpMethodO8rawValueACSgSS_tcfc",
+            "moduleName": "CommunicationManager",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager10HttpMethodO8rawValueSSvp",
+            "mangledName": "$s20CommunicationManager10HttpMethodO8rawValueSSvp",
+            "moduleName": "CommunicationManager",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager10HttpMethodO8rawValueSSvg",
+                "mangledName": "$s20CommunicationManager10HttpMethodO8rawValueSSvg",
+                "moduleName": "CommunicationManager",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:20CommunicationManager10HttpMethodO",
+        "mangledName": "$s20CommunicationManager10HttpMethodO",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Request",
+        "printedName": "Request",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager7RequestC3urlACSS_tKcfc",
+            "mangledName": "$s20CommunicationManager7RequestC3urlACSS_tKcfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "setHeader",
+            "printedName": "setHeader(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RequestHeader",
+                "printedName": "CommunicationManager.RequestHeader",
+                "usr": "s:20CommunicationManager13RequestHeaderC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC9setHeaderyAcA0cE0CF",
+            "mangledName": "$s20CommunicationManager7RequestC9setHeaderyAcA0cE0CF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setBody",
+            "printedName": "setBody(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RequestBody",
+                "printedName": "CommunicationManager.RequestBody",
+                "usr": "s:20CommunicationManager11RequestBodyC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC7setBodyyAcA0cE0CF",
+            "mangledName": "$s20CommunicationManager7RequestC7setBodyyAcA0cE0CF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setHeaderField",
+            "printedName": "setHeaderField(_:headerValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC14setHeaderField_11headerValueACSS_SStF",
+            "mangledName": "$s20CommunicationManager7RequestC14setHeaderField_11headerValueACSS_SStF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setBodyParam",
+            "printedName": "setBodyParam(_:bodyValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "any Swift.Decodable & Swift.Encodable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC12setBodyParam_9bodyValueACSS_Se_SEptF",
+            "mangledName": "$s20CommunicationManager7RequestC12setBodyParam_9bodyValueACSS_Se_SEptF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "get",
+            "printedName": "get(coder:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CoderProtocol",
+                "printedName": "any CommunicationManager.CoderProtocol",
+                "usr": "s:20CommunicationManager13CoderProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?, CommunicationManager.RequestError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Any?, CommunicationManager.RequestError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "CommunicationManager.RequestError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RequestError",
+                            "printedName": "CommunicationManager.RequestError",
+                            "usr": "s:20CommunicationManager12RequestErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC3get5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "mangledName": "$s20CommunicationManager7RequestC3get5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "post",
+            "printedName": "post(coder:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CoderProtocol",
+                "printedName": "any CommunicationManager.CoderProtocol",
+                "usr": "s:20CommunicationManager13CoderProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?, CommunicationManager.RequestError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Any?, CommunicationManager.RequestError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "CommunicationManager.RequestError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RequestError",
+                            "printedName": "CommunicationManager.RequestError",
+                            "usr": "s:20CommunicationManager12RequestErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC4post5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "mangledName": "$s20CommunicationManager7RequestC4post5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "put",
+            "printedName": "put(coder:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CoderProtocol",
+                "printedName": "any CommunicationManager.CoderProtocol",
+                "usr": "s:20CommunicationManager13CoderProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?, CommunicationManager.RequestError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Any?, CommunicationManager.RequestError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "CommunicationManager.RequestError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RequestError",
+                            "printedName": "CommunicationManager.RequestError",
+                            "usr": "s:20CommunicationManager12RequestErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC3put5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "mangledName": "$s20CommunicationManager7RequestC3put5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "delete",
+            "printedName": "delete(coder:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CoderProtocol",
+                "printedName": "any CommunicationManager.CoderProtocol",
+                "usr": "s:20CommunicationManager13CoderProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?, CommunicationManager.RequestError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Any?, CommunicationManager.RequestError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "CommunicationManager.RequestError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RequestError",
+                            "printedName": "CommunicationManager.RequestError",
+                            "usr": "s:20CommunicationManager12RequestErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC6delete5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "mangledName": "$s20CommunicationManager7RequestC6delete5coder17completionHandlerAcA13CoderProtocol_p_yypSg_AA0C5ErrorOSgtctF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "response",
+            "printedName": "response(coder:httpMethod:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Request",
+                "printedName": "CommunicationManager.Request",
+                "usr": "s:20CommunicationManager7RequestC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CoderProtocol",
+                "printedName": "any CommunicationManager.CoderProtocol",
+                "usr": "s:20CommunicationManager13CoderProtocolP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HttpMethod",
+                "printedName": "CommunicationManager.HttpMethod",
+                "usr": "s:20CommunicationManager10HttpMethodO"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Any?, CommunicationManager.RequestError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Any?, CommunicationManager.RequestError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "CommunicationManager.RequestError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RequestError",
+                            "printedName": "CommunicationManager.RequestError",
+                            "usr": "s:20CommunicationManager12RequestErrorO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager7RequestC8response5coder10httpMethod17completionHandlerAcA13CoderProtocol_p_AA04HttpG0OyypSg_AA0C5ErrorOSgtctF",
+            "mangledName": "$s20CommunicationManager7RequestC8response5coder10httpMethod17completionHandlerAcA13CoderProtocol_p_AA04HttpG0OyypSg_AA0C5ErrorOSgtctF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager7RequestC",
+        "mangledName": "$s20CommunicationManager7RequestC",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JsonHelper",
+        "printedName": "JsonHelper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "encodeToJson",
+            "printedName": "encodeToJson(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager10JsonHelperC08encodeToC0y10Foundation4DataVypKFZ",
+            "mangledName": "$s20CommunicationManager10JsonHelperC08encodeToC0y10Foundation4DataVypKFZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeJson",
+            "printedName": "decodeJson(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager10JsonHelperC06decodeC0yyp10Foundation4DataVKFZ",
+            "mangledName": "$s20CommunicationManager10JsonHelperC06decodeC0yyp10Foundation4DataVKFZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager10JsonHelperC",
+        "mangledName": "$s20CommunicationManager10JsonHelperC",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JsonCoder",
+        "printedName": "JsonCoder",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "contentType",
+            "printedName": "contentType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager9JsonCoderC11contentTypeSSvp",
+            "mangledName": "$s20CommunicationManager9JsonCoderC11contentTypeSSvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager9JsonCoderC11contentTypeSSvg",
+                "mangledName": "$s20CommunicationManager9JsonCoderC11contentTypeSSvg",
+                "moduleName": "CommunicationManager",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "JsonCoder",
+                "printedName": "CommunicationManager.JsonCoder",
+                "usr": "s:20CommunicationManager9JsonCoderC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager9JsonCoderCACycfc",
+            "mangledName": "$s20CommunicationManager9JsonCoderCACycfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encodeRequestBody",
+            "printedName": "encodeRequestBody(requestBody:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RequestBody",
+                "printedName": "CommunicationManager.RequestBody",
+                "usr": "s:20CommunicationManager11RequestBodyC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager9JsonCoderC17encodeRequestBody07requestG010Foundation4DataVAA0fG0C_tKF",
+            "mangledName": "$s20CommunicationManager9JsonCoderC17encodeRequestBody07requestG010Foundation4DataVAA0fG0C_tKF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "decodeResponseData",
+            "printedName": "decodeResponseData(responseData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "Any"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager9JsonCoderC18decodeResponseData08responseG0yp10Foundation0G0V_tKF",
+            "mangledName": "$s20CommunicationManager9JsonCoderC18decodeResponseData08responseG0yp10Foundation0G0V_tKF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager9JsonCoderC",
+        "mangledName": "$s20CommunicationManager9JsonCoderC",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CoderProtocol",
+            "printedName": "CoderProtocol",
+            "usr": "s:20CommunicationManager13CoderProtocolP",
+            "mangledName": "$s20CommunicationManager13CoderProtocolP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JsonSerializableError",
+        "printedName": "JsonSerializableError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "missingRequiredInit",
+            "printedName": "missingRequiredInit",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.JsonSerializableError.Type) -> CommunicationManager.JsonSerializableError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JsonSerializableError",
+                    "printedName": "CommunicationManager.JsonSerializableError",
+                    "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.JsonSerializableError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JsonSerializableError",
+                        "printedName": "CommunicationManager.JsonSerializableError",
+                        "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager21JsonSerializableErrorO19missingRequiredInityA2CmF",
+            "mangledName": "$s20CommunicationManager21JsonSerializableErrorO19missingRequiredInityA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "failedToParseJson",
+            "printedName": "failedToParseJson",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.JsonSerializableError.Type) -> (Swift.String) -> CommunicationManager.JsonSerializableError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> CommunicationManager.JsonSerializableError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JsonSerializableError",
+                        "printedName": "CommunicationManager.JsonSerializableError",
+                        "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(description: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.JsonSerializableError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JsonSerializableError",
+                        "printedName": "CommunicationManager.JsonSerializableError",
+                        "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager21JsonSerializableErrorO013failedToParseC0yACSS_tcACmF",
+            "mangledName": "$s20CommunicationManager21JsonSerializableErrorO013failedToParseC0yACSS_tcACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidJsonString",
+            "printedName": "invalidJsonString",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.JsonSerializableError.Type) -> CommunicationManager.JsonSerializableError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JsonSerializableError",
+                    "printedName": "CommunicationManager.JsonSerializableError",
+                    "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.JsonSerializableError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JsonSerializableError",
+                        "printedName": "CommunicationManager.JsonSerializableError",
+                        "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager21JsonSerializableErrorO07invalidC6StringyA2CmF",
+            "mangledName": "$s20CommunicationManager21JsonSerializableErrorO07invalidC6StringyA2CmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "missingRequiredInformationForKey",
+            "printedName": "missingRequiredInformationForKey",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommunicationManager.JsonSerializableError.Type) -> (Swift.String) -> CommunicationManager.JsonSerializableError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> CommunicationManager.JsonSerializableError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JsonSerializableError",
+                        "printedName": "CommunicationManager.JsonSerializableError",
+                        "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommunicationManager.JsonSerializableError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JsonSerializableError",
+                        "printedName": "CommunicationManager.JsonSerializableError",
+                        "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:20CommunicationManager21JsonSerializableErrorO32missingRequiredInformationForKeyyACSScACmF",
+            "mangledName": "$s20CommunicationManager21JsonSerializableErrorO32missingRequiredInformationForKeyyACSScACmF",
+            "moduleName": "CommunicationManager"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager21JsonSerializableErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s20CommunicationManager21JsonSerializableErrorO16errorDescriptionSSSgvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager21JsonSerializableErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s20CommunicationManager21JsonSerializableErrorO16errorDescriptionSSSgvg",
+                "moduleName": "CommunicationManager",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "JsonSerializableError",
+                "printedName": "CommunicationManager.JsonSerializableError",
+                "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "JsonSerializableError",
+                "printedName": "CommunicationManager.JsonSerializableError",
+                "usr": "s:20CommunicationManager21JsonSerializableErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager21JsonSerializableErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s20CommunicationManager21JsonSerializableErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "CommunicationManager",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:20CommunicationManager21JsonSerializableErrorO",
+        "mangledName": "$s20CommunicationManager21JsonSerializableErrorO",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RequestBody",
+        "printedName": "RequestBody",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestBody",
+                "printedName": "CommunicationManager.RequestBody",
+                "usr": "s:20CommunicationManager11RequestBodyC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager11RequestBodyC4bodyACSDySSypG_tcfc",
+            "mangledName": "$s20CommunicationManager11RequestBodyC4bodyACSDySSypG_tcfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestBody",
+                "printedName": "CommunicationManager.RequestBody",
+                "usr": "s:20CommunicationManager11RequestBodyC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:20CommunicationManager11RequestBodyCACycfc",
+            "mangledName": "$s20CommunicationManager11RequestBodyCACycfc",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "Convenience",
+              "AccessControl"
+            ],
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:20CommunicationManager11RequestBodyCyypSgSScip",
+            "mangledName": "$s20CommunicationManager11RequestBodyCyypSgSScip",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager11RequestBodyCyypSgSScig",
+                "mangledName": "$s20CommunicationManager11RequestBodyCyypSgSScig",
+                "moduleName": "CommunicationManager",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager11RequestBodyCyypSgSScis",
+                "mangledName": "$s20CommunicationManager11RequestBodyCyypSgSScis",
+                "moduleName": "CommunicationManager",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager11RequestBodyCyypSgSSciM",
+                "mangledName": "$s20CommunicationManager11RequestBodyCyypSgSSciM",
+                "moduleName": "CommunicationManager",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "setBodyParam",
+            "printedName": "setBodyParam(_:bodyValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestBody",
+                "printedName": "CommunicationManager.RequestBody",
+                "usr": "s:20CommunicationManager11RequestBodyC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "any Swift.Decodable & Swift.Encodable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager11RequestBodyC03setD5Param_9bodyValueACSS_Se_SEptF",
+            "mangledName": "$s20CommunicationManager11RequestBodyC03setD5Param_9bodyValueACSS_Se_SEptF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getParams",
+            "printedName": "getParams()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager11RequestBodyC9getParamsSDySSypGyF",
+            "mangledName": "$s20CommunicationManager11RequestBodyC9getParamsSDySSypGyF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "isEmpty",
+            "printedName": "isEmpty",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager11RequestBodyC7isEmptySbvp",
+            "mangledName": "$s20CommunicationManager11RequestBodyC7isEmptySbvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager11RequestBodyC7isEmptySbvg",
+                "mangledName": "$s20CommunicationManager11RequestBodyC7isEmptySbvg",
+                "moduleName": "CommunicationManager",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "description",
+            "printedName": "description",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:20CommunicationManager11RequestBodyC11descriptionSSvp",
+            "mangledName": "$s20CommunicationManager11RequestBodyC11descriptionSSvp",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:20CommunicationManager11RequestBodyC11descriptionSSvg",
+                "mangledName": "$s20CommunicationManager11RequestBodyC11descriptionSSvg",
+                "moduleName": "CommunicationManager",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "makeIterator",
+            "printedName": "makeIterator()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Iterator",
+                "printedName": "Swift.Dictionary<Swift.String, Any>.Iterator",
+                "usr": "s:SD8IteratorV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:20CommunicationManager11RequestBodyC12makeIteratorSD0F0VySSyp_GyF",
+            "mangledName": "$s20CommunicationManager11RequestBodyC12makeIteratorSD0F0VySSyp_GyF",
+            "moduleName": "CommunicationManager",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:20CommunicationManager11RequestBodyC",
+        "mangledName": "$s20CommunicationManager11RequestBodyC",
+        "moduleName": "CommunicationManager",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(key: Swift.String, value: Any)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.Dictionary<Swift.String, Any>.Iterator",
+                    "usr": "s:SD8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Mirror",
+        "printedName": "Mirror",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:s6MirrorV20CommunicationManagerE12toDictionarySDySSypGyKF",
+            "mangledName": "$ss6MirrorV20CommunicationManagerE12toDictionarySDySSypGyKF",
+            "moduleName": "CommunicationManager",
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:s6MirrorV",
+        "mangledName": "$ss6MirrorV",
+        "moduleName": "Swift",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Data",
+        "printedName": "Data",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toString",
+            "printedName": "toString()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10Foundation4DataV20CommunicationManagerE8toStringSSyF",
+            "mangledName": "$s10Foundation4DataV20CommunicationManagerE8toStringSSyF",
+            "moduleName": "CommunicationManager",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10Foundation4DataV",
+        "mangledName": "$s10Foundation4DataV",
+        "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Frozen",
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RandomAccessCollection",
+            "printedName": "RandomAccessCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sk",
+            "mangledName": "$sSk"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MutableCollection",
+            "printedName": "MutableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SM",
+            "mangledName": "$sSM"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MutableDataProtocol",
+            "printedName": "MutableDataProtocol",
+            "usr": "s:10Foundation19MutableDataProtocolP",
+            "mangledName": "$s10Foundation19MutableDataProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ContiguousBytes",
+            "printedName": "ContiguousBytes",
+            "usr": "s:10Foundation15ContiguousBytesP",
+            "mangledName": "$s10Foundation15ContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Foundation.Data.Iterator",
+                    "usr": "s:10Foundation4DataV8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DataProtocol",
+            "printedName": "DataProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Regions",
+                "printedName": "Regions",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CollectionOfOne",
+                    "printedName": "Swift.CollectionOfOne<Foundation.Data>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:s15CollectionOfOneV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation12DataProtocolP",
+            "mangledName": "$s10Foundation12DataProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Foundation.Data.Iterator",
+                    "usr": "s:10Foundation4DataV8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSData",
+                    "printedName": "Foundation.NSData",
+                    "usr": "c:objc(cs)NSData"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSData",
+                    "printedName": "Foundation.NSData",
+                    "usr": "c:objc(cs)NSData"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "String",
+        "printedName": "String",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toData",
+            "printedName": "toData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS20CommunicationManagerE6toData10Foundation0D0VyF",
+            "mangledName": "$sSS20CommunicationManagerE6toData10Foundation0D0VyF",
+            "moduleName": "CommunicationManager",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:SS",
+        "mangledName": "$sSS",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "EagerMove",
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CodingKeyRepresentable",
+            "printedName": "CodingKeyRepresentable",
+            "usr": "s:s22CodingKeyRepresentableP",
+            "mangledName": "$ss22CodingKeyRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasContiguousBytes",
+            "printedName": "_HasContiguousBytes",
+            "usr": "s:s19_HasContiguousBytesP",
+            "mangledName": "$ss19_HasContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStream",
+            "printedName": "TextOutputStream",
+            "usr": "s:s16TextOutputStreamP",
+            "mangledName": "$ss16TextOutputStreamP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStreamable",
+            "printedName": "TextOutputStreamable",
+            "usr": "s:s20TextOutputStreamableP",
+            "mangledName": "$ss20TextOutputStreamableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "printedName": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "usr": "s:s41_ExpressibleByBuiltinUnicodeScalarLiteralP",
+            "mangledName": "$ss41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinStringLiteral",
+            "printedName": "_ExpressibleByBuiltinStringLiteral",
+            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringLiteral",
+            "printedName": "ExpressibleByStringLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringLiteralType",
+                "printedName": "StringLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s26ExpressibleByStringLiteralP",
+            "mangledName": "$ss26ExpressibleByStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ExtendedGraphemeClusterLiteralType",
+                "printedName": "ExtendedGraphemeClusterLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByUnicodeScalarLiteral",
+            "printedName": "ExpressibleByUnicodeScalarLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarLiteralType",
+                "printedName": "UnicodeScalarLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+            "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "StringProtocol",
+            "printedName": "StringProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UTF8View",
+                "printedName": "UTF8View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF8View",
+                    "printedName": "Swift.String.UTF8View",
+                    "usr": "s:SS8UTF8ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UTF16View",
+                "printedName": "UTF16View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF16View",
+                    "printedName": "Swift.String.UTF16View",
+                    "usr": "s:SS9UTF16ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarView",
+                "printedName": "UnicodeScalarView",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnicodeScalarView",
+                    "printedName": "Swift.String.UnicodeScalarView",
+                    "usr": "s:SS17UnicodeScalarViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sy",
+            "mangledName": "$sSy"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringInterpolation",
+            "printedName": "ExpressibleByStringInterpolation",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringInterpolation",
+                "printedName": "StringInterpolation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultStringInterpolation",
+                    "printedName": "Swift.DefaultStringInterpolation",
+                    "usr": "s:s26DefaultStringInterpolationV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s32ExpressibleByStringInterpolationP",
+            "mangledName": "$ss32ExpressibleByStringInterpolationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MirrorPath",
+            "printedName": "MirrorPath",
+            "usr": "s:s10MirrorPathP",
+            "mangledName": "$ss10MirrorPathP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/JsonSerializable.swift",
+      "kind": "Dictionary",
+      "offset": 1893,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/NetworkRetryManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 355,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/NetworkRetryManager.swift",
+      "kind": "FloatLiteral",
+      "offset": 552,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/NetworkRetryManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 938,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/NetworkRetryManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 974,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/NetworkRetryManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1010,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/RequestHeader.swift",
+      "kind": "StringLiteral",
+      "offset": 174,
+      "length": 14,
+      "value": "\"Content-type\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/RequestHeader.swift",
+      "kind": "StringLiteral",
+      "offset": 238,
+      "length": 33,
+      "value": "\"application\/json; charset=UTF-8\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/RequestHeader.swift",
+      "kind": "StringLiteral",
+      "offset": 327,
+      "length": 35,
+      "value": "\"application\/x-www-form-urlencoded\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/RequestHeader.swift",
+      "kind": "StringLiteral",
+      "offset": 412,
+      "length": 41,
+      "value": "\"application\/jwk-set+json; charset=UTF-8\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/RequestHeader.swift",
+      "kind": "StringLiteral",
+      "offset": 502,
+      "length": 32,
+      "value": "\"application\/jwt; charset=UTF-8\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/RequestHeader.swift",
+      "kind": "StringLiteral",
+      "offset": 590,
+      "length": 27,
+      "value": "\"text\/plain; charset=UTF-8\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "StringLiteral",
+      "offset": 142,
+      "length": 6,
+      "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "StringLiteral",
+      "offset": 164,
+      "length": 5,
+      "value": "\"GET\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "StringLiteral",
+      "offset": 185,
+      "length": 5,
+      "value": "\"PUT\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "StringLiteral",
+      "offset": 209,
+      "length": 8,
+      "value": "\"DELETE\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "StringLiteral",
+      "offset": 235,
+      "length": 7,
+      "value": "\"PATCH\""
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 296,
+      "length": 3,
+      "value": "429"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 329,
+      "length": 3,
+      "value": "500"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 414,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 427,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 495,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/bhavyachauhan\/Documents\/Ping_iOS\/pingone-wallet-ios\/PingOneWallet\/CommunicationManager\/Request.swift",
+      "kind": "IntegerLiteral",
+      "offset": 501,
+      "length": 3,
+      "value": "300"
+    }
+  ]
+}

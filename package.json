@@ -1,0 +1,34 @@
+{
+  "name": "pingone-credentials-sdk-rnwrapper",
+  "version": "0.1.0",
+  "description": "React Native module for PingOne Credentials Wallet SDK",
+  "homepage": "https://github.com/pingidentity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pingidentity/pingone-credentials-sdk-rnwrapper.git"
+  },
+  "author": "Gaurav Khot (Ping Identity)",
+  "license": "Apache-2.0",
+  "keywords": [
+    "react-native",
+    "react-component",
+    "ios",
+    "android",
+    "neo",
+    "wallet",
+    "pingone",
+    "credentials"
+  ],
+  "main": "src",
+  "types": "src/index.tsx",
+  "files": [
+    "android/",
+    "ios/",
+    "src/",
+    "package.json",
+    "RNPingOneCredentialsSDK.podspec"
+  ],
+  "peerDependencies": {
+    "react-native": ">=0.70.0"
+  }
+}

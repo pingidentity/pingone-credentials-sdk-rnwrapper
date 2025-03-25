@@ -1,0 +1,179 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CommunicationManager
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+@_exported import CommunicationManager
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol CoderProtocol {
+  var contentType: Swift.String { get }
+  func encodeRequestBody(requestBody: CommunicationManager.RequestBody) throws -> Foundation.Data
+  func decodeResponseData(responseData: Foundation.Data) throws -> Any
+}
+public protocol JsonSerializableProtocol {
+  init(jsonString: Swift.String) throws
+  func toDictionary() throws -> [Swift.String : Any]
+  func toJsonString() throws -> Swift.String
+}
+open class JsonSerializableObject {
+  public init()
+  required convenience public init(dict: [Swift.String : Any]) throws
+  open func toDictionary() throws -> [Swift.String : Any]
+  open func toJsonString() throws -> Swift.String
+  @objc deinit
+}
+extension CommunicationManager.JsonSerializableProtocol where Self : CommunicationManager.JsonSerializableObject {
+  public init(jsonString: Swift.String) throws
+}
+public typealias JsonSerializable = CommunicationManager.JsonSerializableObject & CommunicationManager.JsonSerializableProtocol
+extension Swift.Mirror {
+  public func toDictionary() throws -> [Swift.String : Any]
+}
+public class NetworkRetryManager {
+  public init(maxRetries: Swift.Int = 5, timeUnit: Foundation.TimeInterval = 1, maxDelay: Foundation.TimeInterval = 30)
+  public func handle(urlRequest: Foundation.URLRequest, completion: @escaping (_ responseData: Foundation.Data?, _ error: CommunicationManager.RequestError?) -> Swift.Void)
+  @objc deinit
+}
+public enum RequestError : Swift.Error {
+  case cannotCreateURL(_: Swift.String)
+  case failedToParseJson(_: (any Swift.Error)? = nil, description: Swift.String)
+  case cannotSerializeRequestBody(_: (any Swift.Error)? = nil, description: Swift.String)
+  case cannotParseResponse(_: (any Swift.Error)? = nil, description: Swift.String)
+  case requestFailedWithError(_: Swift.String, _: Swift.Int?)
+  case requestTimedOut
+}
+extension CommunicationManager.RequestError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension CommunicationManager.RequestError : Swift.Equatable {
+  public static func == (lhs: CommunicationManager.RequestError, rhs: CommunicationManager.RequestError) -> Swift.Bool
+}
+public class RequestHeader {
+  public static let header_content_type: Swift.String
+  public static let header_content_type_json: Swift.String
+  public static let header_content_type_urlencoded: Swift.String
+  public static let header_content_type_jwks: Swift.String
+  public static let header_content_type_jwt: Swift.String
+  public static let header_content_type_text_plain: Swift.String
+  public init(headers: [Swift.String : Swift.String])
+  convenience public init()
+  public subscript(headerField: Swift.String) -> Swift.String? {
+    get
+    set(newValue)
+  }
+  @discardableResult
+  public func setHeaderField(_ headerField: Swift.String, headerValue: Swift.String) -> CommunicationManager.RequestHeader
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+extension CommunicationManager.RequestHeader : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension CommunicationManager.RequestHeader : Swift.Sequence {
+  public typealias Iterator = Swift.DictionaryIterator<Swift.String, Swift.String>
+  public func makeIterator() -> CommunicationManager.RequestHeader.Iterator
+  public typealias Element = Swift.Dictionary<Swift.String, Swift.String>.Iterator.Element
+}
+public enum HttpMethod : Swift.String {
+  case POST
+  case GET
+  case PUT
+  case DELETE
+  case PATCH
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class Request {
+  public init(url: Swift.String) throws
+  @discardableResult
+  public func setHeader(_ header: CommunicationManager.RequestHeader) -> CommunicationManager.Request
+  @discardableResult
+  public func setBody(_ body: CommunicationManager.RequestBody) -> CommunicationManager.Request
+  @discardableResult
+  public func setHeaderField(_ headerField: Swift.String, headerValue: Swift.String) -> CommunicationManager.Request
+  @discardableResult
+  public func setBodyParam(_ bodyField: Swift.String, bodyValue: any Swift.Decodable & Swift.Encodable) -> CommunicationManager.Request
+  @discardableResult
+  public func get(coder: any CommunicationManager.CoderProtocol, completionHandler: @escaping (_ response: Any?, _ error: CommunicationManager.RequestError?) -> Swift.Void) -> CommunicationManager.Request
+  @discardableResult
+  public func post(coder: any CommunicationManager.CoderProtocol, completionHandler: @escaping (_ response: Any?, _ error: CommunicationManager.RequestError?) -> Swift.Void) -> CommunicationManager.Request
+  @discardableResult
+  public func put(coder: any CommunicationManager.CoderProtocol, completionHandler: @escaping (_ response: Any?, _ error: CommunicationManager.RequestError?) -> Swift.Void) -> CommunicationManager.Request
+  @discardableResult
+  public func delete(coder: any CommunicationManager.CoderProtocol, completionHandler: @escaping (_ response: Any?, _ error: CommunicationManager.RequestError?) -> Swift.Void) -> CommunicationManager.Request
+  @discardableResult
+  public func response(coder: any CommunicationManager.CoderProtocol, httpMethod: CommunicationManager.HttpMethod, completionHandler: @escaping (_ response: Any?, _ error: CommunicationManager.RequestError?) -> Swift.Void) -> CommunicationManager.Request
+  @objc deinit
+}
+extension Foundation.Data {
+  public func toString() -> Swift.String
+}
+extension Swift.String {
+  public func toData() -> Foundation.Data
+}
+@_hasMissingDesignatedInitializers public class JsonHelper {
+  public class func encodeToJson(_ data: Any) throws -> Foundation.Data
+  public class func decodeJson(_ jsonData: Foundation.Data) throws -> Any
+  @objc deinit
+}
+public class JsonCoder : CommunicationManager.CoderProtocol {
+  final public let contentType: Swift.String
+  public init()
+  public func encodeRequestBody(requestBody: CommunicationManager.RequestBody) throws -> Foundation.Data
+  public func decodeResponseData(responseData: Foundation.Data) throws -> Any
+  @objc deinit
+}
+public enum JsonSerializableError : Swift.Error {
+  case missingRequiredInit
+  case failedToParseJson(description: Swift.String)
+  case invalidJsonString
+  case missingRequiredInformationForKey(_: Swift.String)
+}
+extension CommunicationManager.JsonSerializableError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension CommunicationManager.JsonSerializableError : Swift.Equatable {
+  public static func == (lhs: CommunicationManager.JsonSerializableError, rhs: CommunicationManager.JsonSerializableError) -> Swift.Bool
+}
+public class RequestBody {
+  public init(body: [Swift.String : Any])
+  convenience public init()
+  public subscript(bodyField: Swift.String) -> Any? {
+    get
+    set(newValue)
+  }
+  @discardableResult
+  public func setBodyParam(_ bodyField: Swift.String, bodyValue: any Swift.Decodable & Swift.Encodable) -> CommunicationManager.RequestBody
+  public func getParams() -> [Swift.String : Any]
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+extension CommunicationManager.RequestBody : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension CommunicationManager.RequestBody : Swift.Sequence {
+  public typealias Iterator = Swift.DictionaryIterator<Swift.String, Any>
+  public func makeIterator() -> CommunicationManager.RequestBody.Iterator
+  public typealias Element = Swift.Dictionary<Swift.String, Any>.Iterator.Element
+}
+extension CommunicationManager.HttpMethod : Swift.Equatable {}
+extension CommunicationManager.HttpMethod : Swift.Hashable {}
+extension CommunicationManager.HttpMethod : Swift.RawRepresentable {}

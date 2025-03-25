@@ -1,0 +1,11 @@
+framework module CommunicationManager {
+  umbrella header "CommunicationManager.h"
+  export *
+
+  module * { export * }
+}
+
+module CommunicationManager.Swift {
+  header "CommunicationManager-Swift.h"
+  requires objc
+}

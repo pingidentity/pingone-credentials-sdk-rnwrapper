@@ -1,0 +1,11 @@
+framework module DIDSDK {
+  umbrella header "DIDSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module DIDSDK.Swift {
+  header "DIDSDK-Swift.h"
+  requires objc
+}
