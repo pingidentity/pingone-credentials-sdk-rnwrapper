@@ -183,14 +183,17 @@ extension PingOneWalletHelper {
 
 extension PingOneWalletHelper {
     public func getCredentialsList(resolver: @escaping RCTPromiseResolveBlock) {
-        var credentialList:[String:String] = [:]
+        var credentialList:[String: [String : Any]] = [:]
         for claim in self.pingOneWalletClient.getDataRepository().getAllCredentials() {
-            for claimData in claim.getClaimData() {
-                if claimData.key.getData() == "CardType" {
-                    credentialList[claim.getId()] = claimData.value.getData()
-                    break
-                }
+            var idExpiries:[ExpirationSignatures] = []
+            for expiry in claim.getIdExpiries() ?? [] {
+                idExpiries.append(ExpirationSignatures(expiry: expiry))
             }
+            var unSaltedClaimData:[String:String] = [:]
+            for claimData in claim.getClaimData() {
+                unSaltedClaimData[claimData.key.getData()] = claimData.value.getData()
+            }
+            credentialList[claim.getId()] = CredentialType(from: claim, expirationSignatures: idExpiries, claimData: unSaltedClaimData).toDictionary()
         }
         resolver(credentialList)
         self.resolver = nil

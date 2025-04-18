@@ -3,7 +3,7 @@ import { NativeModules } from "react-native";
 
 const { PingOneCredentialsSDK } = NativeModules;
 
-type CredentialType = { [key: string]: string };
+export type CredentialTypeMap = { [key: string]: CredentialType };
 
 type PingOneCredentialsSDKType = {
   initializeSDK(): Promise<string>;
@@ -14,3 +14,28 @@ type PingOneCredentialsSDKType = {
 };
 
 export default PingOneCredentialsSDK as PingOneCredentialsSDKType;
+
+export interface CredentialType {
+  id: string;
+  version: number;
+  issuer: string;
+  subject: string;
+  holder: string;
+  referenceClaimId: string;
+  createDate: string;
+  dataJson: string;
+  dataSignature: string;
+  dataHash: string;
+  partitionId: string;
+  idExpiries: ExpirationSignatures[];
+  claimData: ClaimData;
+}
+
+export interface ExpirationSignatures {
+  applicationInstanceId: string;
+  hash: string;
+  expiryTimestamp: string;
+  expirySignature: string;
+}
+
+export type ClaimData = { [key: string]: string };

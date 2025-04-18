@@ -13,6 +13,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons'; // Import icon library
 import Toast, {ToastProps} from 'react-native-toast-message';
 import CustomToast from './CustomToast';
+import {CredentialTypeMap} from '../src/index'; // Import the type for credentials
 
 const toastConfig = {
   success: (props: ToastProps) => <CustomToast {...props} />,
@@ -38,23 +39,26 @@ interface Item {
   message: string;
 }
 
-type CredentialType = {[key: string]: string};
-
 const HomeScreen: React.FC<Props> = ({navigation}) => {
   const [applicationInstanceId, setApplicationInstanceId] = useState<
     string | null
   >('Initializing...');
   const [messages, setMessages] = useState<Item[]>([]);
-  const [credentials, setCredentials] = useState<CredentialType>({});
+  const [credentials, setCredentials] = useState<CredentialTypeMap>({});
   const [messagesVisible, setMessagesVisible] = useState(false);
 
   // Convert dictionary into an array of objects [{ key, message }]
-  const credentialsArray = useMemo(() =>
-    Object.keys(credentials).map(key => ({
+  const credentialsArray = useMemo(() => {
+    // console.log(
+    //   'Credentials in memo',
+    //   credentials[Object.keys(credentials)[0]].claimData.CardType,
+    // );
+    // console.log('Credentials in memo', credentials);
+    return Object.keys(credentials).map(key => ({
       key,
-      message: credentials[key],
-    })),
-  );
+      message: credentials[key].claimData.CardType,
+    }));
+  }, [credentials]);
 
   const appendToMessage = (newMessage: string) => {
     let messageBody;
@@ -146,6 +150,7 @@ const HomeScreen: React.FC<Props> = ({navigation}) => {
   };
 
   const refreshCredentialsList = async () => {
+    console.log('Refreshing credentials list');
     let _credentials = await PingOneCredentialsSDK.getCredentialsList();
     console.log('Credentials', _credentials);
     setCredentials(_credentials);

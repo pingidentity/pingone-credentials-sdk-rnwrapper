@@ -16,6 +16,7 @@ import com.pingidentity.did.sdk.client.service.NotFoundException;
 import com.pingidentity.did.sdk.client.service.model.Challenge;
 import com.pingidentity.did.sdk.types.Claim;
 import com.pingidentity.did.sdk.types.ClaimReference;
+import com.pingidentity.did.sdk.types.ExpirationSignature;
 import com.pingidentity.did.sdk.types.SaltedData;
 import com.pingidentity.did.sdk.types.Share;
 import com.pingidentity.did.sdk.w3c.verifiableCredential.OpenUriAction;
@@ -38,7 +39,9 @@ import com.pingidentity.sdk.pingonewallet.utils.BackgroundThreadHandler;
 
 import com.pingidentity.credentials.wallet.storage.SimpleStorageProvider;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -401,15 +404,23 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
     }
 
     public void getCredentialsList(Promise promise) {
-        WritableMap credentialsList = new WritableNativeMap();
+
+        WritableNativeMap credentialList = new WritableNativeMap();
+
         for (Claim claim : this.pingOneWalletClient.getDataRepository().getAllCredentials()) {
-            for (SaltedData claimDataKey : claim.getClaimData().keySet()) {
-                if (claimDataKey.getData().equalsIgnoreCase("CardType")) {
-                    credentialsList.putString(claim.getId().toString(), claim.getClaimData().get(claimDataKey).getData());
+            List<ExpirationSignatures> idExpiries = new ArrayList<>();
+            if (claim.getIdExpiries() != null) {
+                for (ExpirationSignature expiry : claim.getIdExpiries()) {
+                    idExpiries.add(new ExpirationSignatures(expiry));
                 }
             }
+            WritableNativeMap unSaltedClaimData = new WritableNativeMap();
+            for (Map.Entry<SaltedData, SaltedData> claimData : claim.getClaimData().entrySet()) {
+                unSaltedClaimData.putString(CredentialType.getData(claimData.getKey()),CredentialType.getData(claimData.getValue()));
+            }
+            credentialList.putMap(claim.getId().toString(), CredentialType.createCredentialType(claim, idExpiries, unSaltedClaimData).toMap());
         }
-        promise.resolve(credentialsList);
+        promise.resolve(credentialList);
     }
 
     public void deleteCredential(String credentialId) {
