@@ -1,11 +1,15 @@
 package com.pingidentity.credentials.wallet;
 
+import android.view.inputmethod.InputMethodSession;
+
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.pingidentity.sdk.pingonewallet.types.regions.PingOneRegion;
 
 public class PingOneCredentialsSDK extends ReactContextBaseJavaModule {
@@ -14,6 +18,11 @@ public class PingOneCredentialsSDK extends ReactContextBaseJavaModule {
 
     private PingOneWalletHelper pingOneWalletHelper = null;
     private final ReactApplicationContext reactApplicationContext;
+
+    public interface EventCallback {
+        void emitEvent(String eventName, WritableMap payload);
+    }
+
 
     PingOneCredentialsSDK(ReactApplicationContext context) {
        super(context);
@@ -37,17 +46,17 @@ public class PingOneCredentialsSDK extends ReactContextBaseJavaModule {
                 return;
             }
 
+            EventCallback callback = this::emitEventToJS;
             PingOneWalletHelper.initializeWallet(this.reactApplicationContext, pingOneRegion, helper -> {
                 this.pingOneWalletHelper = helper;
                 promise.resolve(helper.getApplicationInstanceId(pingOneRegion));
             }, throwable -> {
                 promise.reject("Error initializing Wallet", throwable);
-            });
+            }, callback);
         } catch (Exception e) {
             promise.reject("Error initializing Wallet", e);
         }
     }
-
 
     private PingOneRegion getPingOneRegion(String region) {
         return switch (region.toLowerCase()) {
@@ -96,5 +105,25 @@ public class PingOneCredentialsSDK extends ReactContextBaseJavaModule {
     @ReactMethod(isBlockingSynchronousMethod = false)
     public void readNotifications(Promise promise) {
         this.pingOneWalletHelper.readNotifications(promise);
+    }
+    @ReactMethod(isBlockingSynchronousMethod = false)
+    public void enablePolling() {
+        if (this.pingOneWalletHelper == null) {
+            return;
+        }
+        this.pingOneWalletHelper.pollForMessages();
+    }
+    @ReactMethod(isBlockingSynchronousMethod = false)
+    public void stopPolling() {
+        if (this.pingOneWalletHelper == null) {
+            return;
+        }
+        this.pingOneWalletHelper.stopPolling();
+    }
+
+    public void emitEventToJS(String eventName, WritableMap payload) {
+        reactApplicationContext
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                .emit(eventName, payload);
     }
 }

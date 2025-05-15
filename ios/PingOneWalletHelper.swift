@@ -11,6 +11,8 @@ import DIDSDK
 import React
 
 public class PingOneWalletHelper : WalletCallbackHandler {
+
+    var eventCallback: ((String, [String: Any]) -> Void)?
     
     private var pingOneWalletClient: PingOneWalletClient!
     
@@ -27,7 +29,7 @@ public class PingOneWalletHelper : WalletCallbackHandler {
     
     public func handleCredentialIssuance(issuer: String, message: String?, challenge: DIDSDK.Challenge?, claim: DIDSDK.Claim, errors: [PingOneWallet.WalletException]) -> Bool {
         print("handleCredentialIssuance: Got credential issued from \(issuer) with message: \(message ?? "no message")")
-        self.successMessage(message: "Credential \(self.getCardType(claim)) received. Saved to wallet")
+        self.successMessage(message: "Credential \(self.getCardType(claim)) received. Saved to wallet", event: "P1SDK_handleCredentialIssuance")
         return true
     }
     
@@ -35,7 +37,7 @@ public class PingOneWalletHelper : WalletCallbackHandler {
         print("Credential revoked: Issuer: \(issuer) message: \(message ?? "no message")")
         if let claim = self.pingOneWalletClient.getDataRepository().getCredential(for: claimReference.getId()) {
             self.pingOneWalletClient.getDataRepository().deleteCredential(forId: claim.getId())
-            self.successMessage(message: "Credential \(self.getCardType(claim)) revoked. Removed from wallet")
+            self.successMessage(message: "Credential \(self.getCardType(claim)) revoked. Removed from wallet", event: "P1SDK_handleCredentialRevocation")
         }
         return true
     }
@@ -151,9 +153,6 @@ public class PingOneWalletHelper : WalletCallbackHandler {
         case .PAIRING_REQUEST:
             self.handlePairingRequest(event.getPairingRequest())
         case .PAIRING_RESPONSE:
-            //          if (!self.isPollingEnabled()) { //Poll only until Push notification token gets registered
-            //              self.stopPolling()
-            //          }
             logattention("Wallet paired: \(String(describing: event.isSuccess())) - error: \(event.getError()?.localizedDescription ?? "None")")
             if let isSuccess = event.isSuccess() {
                 if let resolver = resolver {
@@ -231,7 +230,7 @@ extension PingOneWalletHelper {
     }
     
     
-    private func sendNotification(title: String, message: String) {
+    private func sendNotification(title: String, message: String, event: String) {
         let map: [String: Any] = [
             "title": title,
             "message": message
@@ -243,24 +242,41 @@ extension PingOneWalletHelper {
                     resolver(payloadString)
                     self.resolver = nil
                 } else {
-                    self.notifications.enqueue(payloadString)
+                    emitEventandEnqueMessage(payloadString: payloadString, message: message, event: event)
                 }
             } else {
                 if let rejecter = self.rejecter {
                     rejecter("error", payloadString, nil)
                     self.rejecter = nil
                 } else {
-                    self.notifications.enqueue(payloadString)
+                    emitEventandEnqueMessage(payloadString: payloadString, message: message, event: event)
                 }
             }
         }
     }
     
-    private func successMessage(message: String) {
-        self.sendNotification(title: "success", message: message)
+    private func successMessage(message: String, event: String) {
+        self.sendNotification(title: "success", message: message, event: event)
+    }
+    
+    private func emitEventandEnqueMessage(payloadString: String, message: String, event: String){
+        self.notifications.enqueue(payloadString)
+        let payloadMap: [String: Any] = ["message": message]
+        self.eventCallback?(event, payloadMap)
     }
     
     private func errorMessage(message: String) {
-        self.sendNotification(title: "error", message: message)
+        self.sendNotification(title: "error", message: message, event: "P1SDK_handleErrorEvent")
     }
+    
+    /// Call this method to start polling for new messages sent to the wallet. Use this method only if you are not using push notifications.
+    public func pollForMessages() {
+        self.pingOneWalletClient.pollForMessages()
+    }
+    
+    /// Call this method to stop polling for messages sent to the wallet.
+    public func stopPolling() {
+            self.pingOneWalletClient.stopPolling()
+    }
+    
 }

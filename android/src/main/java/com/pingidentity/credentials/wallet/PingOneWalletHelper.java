@@ -2,6 +2,7 @@ package com.pingidentity.credentials.wallet;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.inputmethod.InputMethodSession;
 
 import androidx.annotation.NonNull;
 import androidx.core.util.Consumer;
@@ -49,9 +50,17 @@ import java.util.stream.Collectors;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
+
 public class PingOneWalletHelper implements WalletCallbackHandler {
 
     public static final String TAG = PingOneWalletHelper.class.getCanonicalName();
+    public static final String SDK_HANDLE_CREDENTIAL_ISSUANCE = "P1SDK_handleCredentialIssuance";
+    public static final String SDK_HANDLE_CREDENTIAL_REVOCATION = "P1SDK_handleCredentialRevocation";
+    public static final String SDK_HANDLE_PAIRING_REQUEST = "P1SDK_handlePairingRequest";
+    public static final String SDK_PRESENT_CREDENTIAL = "P1SDK_presentCredential";
+    public static final String SDK_HANDLE_PRESENTATION_ACTION = "P1SDK_handlePresentationAction";
+    public static final String SDK_HANDLE_PAIRING_EVENT = "P1SDK_handlePairingEvent";
+    public static final String SDK_HANDLE_ERROR = "P1SDK_handleErrorEvent";
 
     private final PingOneWalletClient pingOneWalletClient;
 
@@ -61,24 +70,25 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
 
     private Promise promise;
 
+    private PingOneCredentialsSDK.EventCallback eventCallback;
+
+
+
     private PingOneWalletHelper(PingOneWalletClient client) {
         this.pingOneWalletClient = client;
         client.registerCallbackHandler(this);
-
-        if (this.enablePolling) {
-            pollForMessages();
-        }
     }
 
     public void setPackageName(Context context) {
 
     }
 
-    public static void initializeWallet(Context context, PingOneRegion pingOneRegion, Consumer<PingOneWalletHelper> onResult, Consumer<Throwable> onError) {
+    public static void initializeWallet(Context context, PingOneRegion pingOneRegion, Consumer<PingOneWalletHelper> onResult, Consumer<Throwable> onError, PingOneCredentialsSDK.EventCallback callback) {
         new PingOneWalletClient.Builder(context, pingOneRegion)
                 .setStorageManager(new SimpleStorageProvider(context))
                         .build(pingOneWalletClient -> {
                             PingOneWalletHelper helper = new PingOneWalletHelper(pingOneWalletClient);
+                            helper.eventCallback = callback;
                             onResult.accept(helper);
                         }, onError);
     }
@@ -134,16 +144,6 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
         pingOneWalletClient.stopPolling();
     }
 
-    /**
-     * Set this to true if push notifications are not configured in your app
-     */
-
-    public boolean enablePolling = false;
-
-    public boolean isPollingEnabled() {
-        return this.enablePolling;
-    }
-
 
     /////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////// WalletCallbackHandler Implementation /////////////////////
@@ -163,7 +163,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
     public boolean handleCredentialIssuance(String issuer, String message, Challenge challenge, Claim claim, List<WalletException> errors) {
         Log.i(TAG, "handleCredentialIssuance: Credential issued: Issuer: " + issuer + " message: " + (message == null ? "no message" : message));
         pingOneWalletClient.getDataRepository().saveCredential(claim);
-        successMessage("Credential '" + getCardType(claim) + "' received. Saved to wallet");
+        successMessage("Credential '" + getCardType(claim) + "' received. Saved to wallet", SDK_HANDLE_CREDENTIAL_ISSUANCE);
         return true;
     }
 
@@ -184,7 +184,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
         Claim claim = pingOneWalletClient.getDataRepository().getCredential(claimReference.getId().toString()); // TODO: fix this
         if (claim != null) {
             pingOneWalletClient.getDataRepository().deleteCredential(claim.getId().toString());
-            successMessage("Credential '" + getCardType(claim) + "' revoked. Removed from wallet");
+            successMessage("Credential '" + getCardType(claim) + "' revoked. Removed from wallet", SDK_HANDLE_CREDENTIAL_REVOCATION);
         }
         return true;
     }
@@ -273,7 +273,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
     private void handlePairingRequest(PairingRequest pairingRequest) {
         try {
             pingOneWalletClient.pairWallet(pairingRequest, null);
-            successMessage("Wallet pairing response sent");
+            successMessage("Wallet pairing response sent", SDK_HANDLE_PAIRING_REQUEST);
         } catch (Exception e) {
             Log.e(TAG, "Failed to pair wallet", e);
             errorMessage("Failed to pair wallet: " + e.getMessage());
@@ -305,7 +305,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
                         .subscribe(presentationResult -> {
                             switch (presentationResult.getPresentationStatus().getStatus()) {
                                 case SUCCESS:
-                                    successMessage("Information sent successfully");
+                                    successMessage("Information sent successfully", SDK_PRESENT_CREDENTIAL);
                                     break;
                                 case FAILURE:
                                     errorMessage("Failed to present credential");
@@ -331,7 +331,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
             case OPEN_URI:
                 OpenUriAction openUriAction = (OpenUriAction) action;
                 String appOpenUri = openUriAction.getRedirectUri();
-                this.successMessage(appOpenUri);
+                this.successMessage(appOpenUri, SDK_HANDLE_PRESENTATION_ACTION);
         }
     }
 
@@ -343,7 +343,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
                 break;
             case PAIRING_RESPONSE:
                 if (event.isSuccess()) {
-                    this.successMessage("Wallet paired successfully");
+                    this.successMessage("Wallet paired successfully", SDK_HANDLE_PAIRING_EVENT);
                 } else {
  
                         this.errorMessage("Failed to pair wallet: " + (event.getError() == null ? "" : event.getError()));
@@ -380,7 +380,7 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
         return pingOneWalletClient.getApplicationInstance(pingOneRegion).getId().toString();
     }
 
-    private void sendNotification(@NonNull String title, @NonNull String message) {
+    private void sendNotification(@NonNull String title, @NonNull String message, String eventName) {
         Map<String, String> messageObj = Map.of("title", title, "message", message);
         String messageStr = gson.toJson(messageObj);
         if (this.promise != null) {
@@ -392,15 +392,22 @@ public class PingOneWalletHelper implements WalletCallbackHandler {
             this.promise = null;
         } else {
             this.messagesQueue.offer(messageStr);
+            WritableNativeMap payload = new WritableNativeMap();
+            payload.putString("message", message);
+            sendJSEvent(eventName, payload);
         }
     }
 
-    private void successMessage(@NonNull String message) {
-        sendNotification("success", message);
+    private void successMessage(@NonNull String message, String eventName) {
+        sendNotification("success", message, eventName);
+    }
+
+    private void sendJSEvent(String eventName, WritableNativeMap payload) {
+        eventCallback.emitEvent(eventName, payload);
     }
 
     private void errorMessage(@NonNull String message) {
-        sendNotification("error", message);
+        sendNotification("error", message, SDK_HANDLE_ERROR);
     }
 
     public void getCredentialsList(Promise promise) {

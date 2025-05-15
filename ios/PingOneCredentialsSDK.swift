@@ -10,9 +10,28 @@ import React
 import PingOneWallet
 
 @objc(PingOneCredentialsSDK)
-class PingOneCredentialsSDK: NSObject {
+class PingOneCredentialsSDK: RCTEventEmitter {
     
     private var pingOneWalletHelper: PingOneWalletHelper?
+    
+    
+    override func supportedEvents() -> [String]! {
+            return [
+                "P1SDK_handleCredentialIssuance",
+                "P1SDK_handleCredentialRevocation",
+                "P1SDK_handlePairingRequest",
+                "P1SDK_presentCredential",
+                "P1SDK_handlePresentationAction",
+                "P1SDK_handlePairingEvent",
+                "P1SDK_handleErrorEvent"
+            ]
+        }
+        
+        private func emitEvent(eventName: String, map: [String: Any]) {
+            if self.bridge != nil {
+                self.sendEvent(withName: eventName, body: map)
+            }
+        }
     
     @objc(initializeSDK:resolver:rejecter:)
     func initializeSDK(_ region: String, resolver resolve: @escaping RCTPromiseResolveBlock, rejecter reject:@escaping RCTPromiseRejectBlock) -> Void {
@@ -33,6 +52,9 @@ class PingOneCredentialsSDK: NSObject {
             }
             .onResult { client in
                 self.pingOneWalletHelper = PingOneWalletHelper(client)
+                self.pingOneWalletHelper?.eventCallback = { [weak self] eventName, payload in
+                    self?.emitEvent(eventName: eventName, map: payload)
+                }
                 if let applicationInstanceId = client.getApplicationInstance(forRegion: pingOneRegion)?.getId() {
                     print("*********", applicationInstanceId)
                     resolve(applicationInstanceId)
@@ -112,5 +134,21 @@ class PingOneCredentialsSDK: NSObject {
                 "PRESENTATION_COMPLETE": "presentation_complete"
         ]
     }
+    
+    @objc
+    func enablePolling(){
+        guard let pingOneWalletHelper = self.pingOneWalletHelper else {
+            return
+        }
+        pingOneWalletHelper.pollForMessages()
+    }
+    @objc
+    func stopPolling(){
+        guard let pingOneWalletHelper = self.pingOneWalletHelper else {
+            return
+        }
+        pingOneWalletHelper.stopPolling()
+    }
+    
     
 }

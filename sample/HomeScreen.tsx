@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useMemo} from 'react';
 import {
+  Alert,
   View,
   Text,
   Platform,
@@ -8,6 +9,8 @@ import {
   FlatList,
   TouchableOpacity,
   Modal,
+  NativeEventEmitter,
+  NativeModules,
 } from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons'; // Import icon library
@@ -19,9 +22,8 @@ const toastConfig = {
   success: (props: ToastProps) => <CustomToast {...props} />,
 };
 
-import {NativeModules} from 'react-native';
-
 const {PingOneCredentialsSDK} = NativeModules;
+const eventEmitter = new NativeEventEmitter(PingOneCredentialsSDK);
 
 type RootStackParamList = {
   Home: undefined;
@@ -49,11 +51,6 @@ const HomeScreen: React.FC<Props> = ({navigation}) => {
 
   // Convert dictionary into an array of objects [{ key, message }]
   const credentialsArray = useMemo(() => {
-    // console.log(
-    //   'Credentials in memo',
-    //   credentials[Object.keys(credentials)[0]].claimData.CardType,
-    // );
-    // console.log('Credentials in memo', credentials);
     return Object.keys(credentials).map(key => ({
       key,
       message: credentials[key].claimData.CardType,
@@ -110,9 +107,7 @@ const HomeScreen: React.FC<Props> = ({navigation}) => {
   useEffect(() => {
     const fetchResult = async () => {
       try {
-        let _applicationInstanceId = await PingOneCredentialsSDK.initializeSDK(
-          'na',
-        );
+        let _applicationInstanceId = await PingOneCredentialsSDK.initializeSDK('na');
         console.log(`Application Instance ID: ${_applicationInstanceId}`);
         setApplicationInstanceId(_applicationInstanceId);
         refreshCredentialsList();
@@ -122,13 +117,121 @@ const HomeScreen: React.FC<Props> = ({navigation}) => {
     };
 
     fetchResult();
+
+    // Add event listeners for various events
+    const handleCredentialIssuanceListener = eventEmitter.addListener(
+      'P1SDK_handleCredentialIssuance',
+      (event) => {
+        console.log('Credential Issuance Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Credential Issued: ${event.message}`);
+      }
+    );
+
+    const handleCredentialRevocationListener = eventEmitter.addListener(
+      'P1SDK_handleCredentialRevocation',
+      (event) => {
+        console.log('Credential Revocation Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Credential Revoked: ${event.message}`);
+      }
+    );
+
+    const handlePairingRequestListener = eventEmitter.addListener(
+      'P1SDK_handlePairingRequest',
+      (event) => {
+        console.log('Pairing Request Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Pairing Request: ${event.message}`);
+      }
+    );
+
+    const presentCredentialListener = eventEmitter.addListener(
+      'P1SDK_presentCredential',
+      (event) => {
+        console.log('Present Credential Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Credential Presented: ${event.message}`);
+      }
+    );
+
+    const handlePresentationActionListener = eventEmitter.addListener(
+      'P1SDK_handlePresentationAction',
+      (event) => {
+        console.log('Presentation Action Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Presentation Action: ${event.message}`);
+      }
+    );
+
+    const handlePairingEventListener = eventEmitter.addListener(
+      'P1SDK_handlePairingEvent',
+      (event) => {
+        console.log('Pairing Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Pairing Event: ${event.message}`);
+      }
+    );
+
+    const handleErrorEventListener = eventEmitter.addListener(
+      'P1SDK_handleErrorEvent',
+      (event) => {
+        console.error('Error Event received:', event);
+        showEventDialog(event.message);
+        appendToMessage(`Error: ${event.message}`);
+      }
+    );
+
+    return () => {
+      // Clean up all event listeners
+      handleCredentialIssuanceListener.remove();
+      handleCredentialRevocationListener.remove();
+      handlePairingRequestListener.remove();
+      presentCredentialListener.remove();
+      handlePresentationActionListener.remove();
+      handlePairingEventListener.remove();
+      handleErrorEventListener.remove();
+    };
   }, []);
 
+  const showEventDialog = async(event: string) => {
+    Alert.alert(
+      "Event Received",
+      event,
+      [
+        {
+          text: "OK",
+          onPress: () => console.log("OK Pressed"),
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   const handleScanComplete = async (scannedCode: string) => {
-    let response = await PingOneCredentialsSDK.processRequest(scannedCode);
-    appendToMessage(response);
-    console.log(response);
-    checkForMessages();
+    Alert.alert(
+      "Confirm Pairing",
+      "Are you sure you want to pair with the scanned code?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Pair",
+          onPress: async () => {
+            try {
+              let response = await PingOneCredentialsSDK.processRequest(scannedCode);
+              appendToMessage(response);
+              console.log(response);
+              checkForMessages();
+            } catch (error) {
+              console.error("Error processing scanned code:", error);
+            }
+          },
+        },
+      ]
+    );
   };
 
   const checkForMessages = async () => {
